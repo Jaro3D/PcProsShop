@@ -92,7 +92,7 @@
             this.cartButton.FlatAppearance.BorderSize = 0;
             this.cartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cartButton.ForeColor = System.Drawing.Color.White;
-            this.cartButton.Location = new System.Drawing.Point(596, 33);
+            this.cartButton.Location = new System.Drawing.Point(597, 33);
             this.cartButton.Name = "cartButton";
             this.cartButton.Size = new System.Drawing.Size(50, 50);
             this.cartButton.TabIndex = 4;
