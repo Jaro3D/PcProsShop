@@ -172,6 +172,7 @@ namespace PcProsShop
         {
             tabIndex = 3;
             SwitchTab();
+            slogan.Text = Database.TestFunc();
         }
 
         private void accountButton_Click(object sender, EventArgs e)
