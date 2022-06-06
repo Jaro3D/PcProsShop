@@ -92,7 +92,7 @@ namespace PcProsShop
         {
             Console.WriteLine("Sending Account Creation Notification\n");
             String subject = "Welcome To PC Pros " + userAccount.Name;
-            String text = "<!DOCTYPE html><html><body style = background-color:#C6E2FF><h2>"
+            String text = "<!DOCTYPE html><html><body style = background-color:#81b6ff><h2>"
                 + "Welcome to PC Pros " + userAccount.Name 
                 + "</h2><p> You're account was succesfully created." 
                 + "<br>Check our store for best price deals" 
@@ -111,7 +111,7 @@ namespace PcProsShop
         {
             Console.WriteLine("Sending Order Invoice Notification\n");
             String subject = "PC Pros: Order Confirmation";
-            String text = "<!DOCTYPE html><html><body style = background-color:#C6E2FF>" 
+            String text = "<!DOCTYPE html><html><body style = background-color:#81b6ff>"
                 + "<br><br><h2>PC Pros: Order Confirmation</h2>"
                 + "<p>Dear " + userAccount.Name + ", <br>"
                 + " we are happy to inform you that your order was approved by the system.<br>"
