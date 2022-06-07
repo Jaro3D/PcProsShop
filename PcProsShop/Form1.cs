@@ -14,7 +14,6 @@ namespace PcProsShop
         private bool mouseDown;
         private Point offset;
         private int tabIndex = 0;
-        private Item[] inventory;
 
         public Form1()
         {
@@ -28,7 +27,7 @@ namespace PcProsShop
             itemBackground.BackColor = Color.FromArgb(0, Color.Black);
             header.BackColor = Color.FromArgb(0, Color.Black);
 
-            UC_Home ucHome = new UC_Home();
+            UC_Home ucHome = new UC_Home(tabIndex);
             AddUserControl(ucHome);
 
             SwitchTab();
@@ -45,11 +44,8 @@ namespace PcProsShop
                     ButtonDeselect(cpuButton);
                     ButtonDeselect(ramButton);
 
-                    UC_Home ucHome = new UC_Home();
+                    UC_Home ucHome = new UC_Home(tabIndex);
                     AddUserControl(ucHome);
-
-                    inventory = Database.LoadInventory(Category.GPU);
-                    //slogan.Text = inventory[0].Name;
 
                     break;
 
@@ -60,6 +56,9 @@ namespace PcProsShop
                     ButtonDeselect(gpuButton);
                     ButtonDeselect(ramButton);
 
+                    ucHome = new UC_Home(tabIndex);
+                    AddUserControl(ucHome);
+
                     break;
 
                 case 2:
@@ -68,6 +67,9 @@ namespace PcProsShop
                     ButtonSelect(ramButton);
                     ButtonDeselect(cpuButton);
                     ButtonDeselect(gpuButton);
+
+                    ucHome = new UC_Home(tabIndex);
+                    AddUserControl(ucHome);
 
                     break;
 

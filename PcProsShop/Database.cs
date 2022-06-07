@@ -20,14 +20,19 @@ namespace PcProsShop
             {
                 using (var command = connection.CreateCommand())
                 {
-                    command.CommandText = @"SELECT * FROM Item WHERE category = '"+ category +"'";
-                    
                     connection.Open();
-                    MessageBox.Show("In command");
+
+                    command.CommandText = @"SELECT count(*) FROM Item WHERE category = '" + category + "'";
+
+                    //Capture how many items were selected
+                    Int32 count = Convert.ToInt32(command.ExecuteScalar());
+
+                    inventory = new Item[count];
+
+                    command.CommandText = @"SELECT * FROM Item WHERE category = '" + category + "' ORDER BY price";
 
                     using (var reader = command.ExecuteReader())
                     {
-                        MessageBox.Show("In reader");
                         int index = 0;
                         while (reader.Read())
                         {
