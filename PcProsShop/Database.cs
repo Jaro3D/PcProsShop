@@ -32,7 +32,6 @@ namespace PcProsShop
                         while (reader.Read())
                         {
                             Item tempItem = new Item();
-                            MessageBox.Show(reader["name"].ToString());
                             tempItem.ItemID = Convert.ToInt32(reader["id"]);
                             tempItem.Name = reader["name"].ToString();
                             tempItem.Brand = reader["brand"].ToString();
