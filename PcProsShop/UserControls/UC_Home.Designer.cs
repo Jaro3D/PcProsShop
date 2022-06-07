@@ -33,13 +33,14 @@
             this.item4 = new System.Windows.Forms.Panel();
             this.price4 = new System.Windows.Forms.Label();
             this.item5 = new System.Windows.Forms.Panel();
+            this.price5 = new System.Windows.Forms.Label();
             this.item2 = new System.Windows.Forms.Panel();
             this.price2 = new System.Windows.Forms.Label();
             this.item3 = new System.Windows.Forms.Panel();
             this.price3 = new System.Windows.Forms.Label();
             this.item6 = new System.Windows.Forms.Panel();
-            this.price5 = new System.Windows.Forms.Label();
             this.price6 = new System.Windows.Forms.Label();
+            this.itemPic1 = new System.Windows.Forms.Panel();
             this.item1.SuspendLayout();
             this.item4.SuspendLayout();
             this.item5.SuspendLayout();
@@ -51,6 +52,7 @@
             // item1
             // 
             this.item1.BackgroundImage = global::PcProsShop.Properties.Resources.ItemBackgroundBlue;
+            this.item1.Controls.Add(this.itemPic1);
             this.item1.Controls.Add(this.price1);
             this.item1.Location = new System.Drawing.Point(10, 10);
             this.item1.Name = "item1";
@@ -95,6 +97,16 @@
             this.item5.Size = new System.Drawing.Size(250, 280);
             this.item5.TabIndex = 3;
             this.item5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // price5
+            // 
+            this.price5.AutoSize = true;
+            this.price5.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.price5.Location = new System.Drawing.Point(3, 23);
+            this.price5.Name = "price5";
+            this.price5.Size = new System.Drawing.Size(72, 34);
+            this.price5.TabIndex = 2;
+            this.price5.Text = "1000€";
             // 
             // item2
             // 
@@ -143,16 +155,6 @@
             this.item6.Size = new System.Drawing.Size(250, 280);
             this.item6.TabIndex = 5;
             // 
-            // price5
-            // 
-            this.price5.AutoSize = true;
-            this.price5.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.price5.Location = new System.Drawing.Point(3, 23);
-            this.price5.Name = "price5";
-            this.price5.Size = new System.Drawing.Size(72, 34);
-            this.price5.TabIndex = 2;
-            this.price5.Text = "1000€";
-            // 
             // price6
             // 
             this.price6.AutoSize = true;
@@ -162,6 +164,14 @@
             this.price6.Size = new System.Drawing.Size(72, 34);
             this.price6.TabIndex = 2;
             this.price6.Text = "1000€";
+            // 
+            // itemPic1
+            // 
+            this.itemPic1.BackgroundImage = global::PcProsShop.Properties.Resources.Item_RTX3090Ti;
+            this.itemPic1.Location = new System.Drawing.Point(15, 57);
+            this.itemPic1.Name = "itemPic1";
+            this.itemPic1.Size = new System.Drawing.Size(220, 220);
+            this.itemPic1.TabIndex = 2;
             // 
             // UC_Home
             // 
@@ -206,5 +216,6 @@
         private Label price3;
         private Label price5;
         private Label price6;
+        private Panel itemPic1;
     }
 }

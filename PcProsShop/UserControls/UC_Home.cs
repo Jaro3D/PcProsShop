@@ -45,7 +45,6 @@ namespace PcProsShop.UserControls
                     invLength = Database.LoadInventory(Category.RAM).Length;
                     inventory = new Item[invLength];
                     inventory = Database.LoadInventory(Category.RAM);
-                    MessageBox.Show("RAM");
                     break;
 
                 default:
@@ -59,21 +58,25 @@ namespace PcProsShop.UserControls
         {
             if (invLength > 0)
             {
-                DisplayLength(0, 2, item1, price1);
-                DisplayLength(1, 3, item2, price2);
-                DisplayLength(2, 4, item3, price3);
-                DisplayLength(3, 5, item4, price4);
-                DisplayLength(4, 6, item5, price5);
-                DisplayLength(5, 7, item6, price6);
+                DisplayLength(0, 1, item1, price1);
+                DisplayLength(1, 2, item2, price2);
+                DisplayLength(2, 3, item3, price3);
+                DisplayLength(3, 4, item4, price4);
+                DisplayLength(4, 5, item5, price5);
+                DisplayLength(5, 6, item6, price6);
             }
         }
 
-        private void DisplayLength(int index, int length, Panel item, Label label)
+        private void DisplayLength(int index, int requiredLength, Panel item, Label label)
         {
-            if (length < invLength)
+            if (requiredLength < invLength + 1)
             {
                 item.Visible = true;
                 label.Text = inventory[index].Price.ToString() + "€";
+            }
+            else
+            {
+                item.Visible = false;
             }
         }
 
@@ -97,6 +100,8 @@ namespace PcProsShop.UserControls
             price4.BackColor = Color.FromArgb(0, Color.Black);
             price5.BackColor = Color.FromArgb(0, Color.Black);
             price6.BackColor = Color.FromArgb(0, Color.Black);
+
+            itemPic1.BackColor = Color.FromArgb(0, Color.Black);
         }
     }
 }

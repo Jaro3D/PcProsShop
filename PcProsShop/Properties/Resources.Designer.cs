@@ -93,6 +93,16 @@ namespace PcProsShop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Item_RTX3090Ti {
+            get {
+                object obj = ResourceManager.GetObject("Item_RTX3090Ti", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ItemBackground {
             get {
                 object obj = ResourceManager.GetObject("ItemBackground", resourceCulture);
