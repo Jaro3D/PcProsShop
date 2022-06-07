@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.item1 = new System.Windows.Forms.Panel();
+            this.itemPic1 = new System.Windows.Forms.Panel();
             this.price1 = new System.Windows.Forms.Label();
             this.item4 = new System.Windows.Forms.Panel();
             this.price4 = new System.Windows.Forms.Label();
@@ -40,7 +41,11 @@
             this.price3 = new System.Windows.Forms.Label();
             this.item6 = new System.Windows.Forms.Panel();
             this.price6 = new System.Windows.Forms.Label();
-            this.itemPic1 = new System.Windows.Forms.Panel();
+            this.itemPic2 = new System.Windows.Forms.Panel();
+            this.itemPic3 = new System.Windows.Forms.Panel();
+            this.itemPic4 = new System.Windows.Forms.Panel();
+            this.itemPic5 = new System.Windows.Forms.Panel();
+            this.itemPic6 = new System.Windows.Forms.Panel();
             this.item1.SuspendLayout();
             this.item4.SuspendLayout();
             this.item5.SuspendLayout();
@@ -59,6 +64,14 @@
             this.item1.Size = new System.Drawing.Size(250, 280);
             this.item1.TabIndex = 0;
             // 
+            // itemPic1
+            // 
+            this.itemPic1.BackgroundImage = global::PcProsShop.Properties.Resources.Item_Ryzen5_5600X;
+            this.itemPic1.Location = new System.Drawing.Point(15, 45);
+            this.itemPic1.Name = "itemPic1";
+            this.itemPic1.Size = new System.Drawing.Size(220, 220);
+            this.itemPic1.TabIndex = 2;
+            // 
             // price1
             // 
             this.price1.AutoSize = true;
@@ -72,6 +85,7 @@
             // item4
             // 
             this.item4.BackgroundImage = global::PcProsShop.Properties.Resources.ItemBackgroundGreen;
+            this.item4.Controls.Add(this.itemPic4);
             this.item4.Controls.Add(this.price4);
             this.item4.Location = new System.Drawing.Point(10, 305);
             this.item4.Name = "item4";
@@ -91,6 +105,7 @@
             // item5
             // 
             this.item5.BackgroundImage = global::PcProsShop.Properties.Resources.ItemBackgroundGreen;
+            this.item5.Controls.Add(this.itemPic5);
             this.item5.Controls.Add(this.price5);
             this.item5.Location = new System.Drawing.Point(272, 305);
             this.item5.Name = "item5";
@@ -111,6 +126,7 @@
             // item2
             // 
             this.item2.BackgroundImage = global::PcProsShop.Properties.Resources.ItemBackgroundBlue;
+            this.item2.Controls.Add(this.itemPic2);
             this.item2.Controls.Add(this.price2);
             this.item2.Location = new System.Drawing.Point(272, 10);
             this.item2.Name = "item2";
@@ -130,6 +146,7 @@
             // item3
             // 
             this.item3.BackgroundImage = global::PcProsShop.Properties.Resources.ItemBackgroundBlue;
+            this.item3.Controls.Add(this.itemPic3);
             this.item3.Controls.Add(this.price3);
             this.item3.Location = new System.Drawing.Point(534, 10);
             this.item3.Name = "item3";
@@ -149,6 +166,7 @@
             // item6
             // 
             this.item6.BackgroundImage = global::PcProsShop.Properties.Resources.ItemBackgroundGreen;
+            this.item6.Controls.Add(this.itemPic6);
             this.item6.Controls.Add(this.price6);
             this.item6.Location = new System.Drawing.Point(534, 305);
             this.item6.Name = "item6";
@@ -165,13 +183,45 @@
             this.price6.TabIndex = 2;
             this.price6.Text = "1000€";
             // 
-            // itemPic1
+            // itemPic2
             // 
-            this.itemPic1.BackgroundImage = global::PcProsShop.Properties.Resources.Item_RTX3090Ti;
-            this.itemPic1.Location = new System.Drawing.Point(15, 57);
-            this.itemPic1.Name = "itemPic1";
-            this.itemPic1.Size = new System.Drawing.Size(220, 220);
-            this.itemPic1.TabIndex = 2;
+            this.itemPic2.BackgroundImage = global::PcProsShop.Properties.Resources.Item_Ryzen5_5600X;
+            this.itemPic2.Location = new System.Drawing.Point(15, 45);
+            this.itemPic2.Name = "itemPic2";
+            this.itemPic2.Size = new System.Drawing.Size(220, 220);
+            this.itemPic2.TabIndex = 3;
+            // 
+            // itemPic3
+            // 
+            this.itemPic3.BackgroundImage = global::PcProsShop.Properties.Resources.Item_Ryzen5_5600X;
+            this.itemPic3.Location = new System.Drawing.Point(15, 45);
+            this.itemPic3.Name = "itemPic3";
+            this.itemPic3.Size = new System.Drawing.Size(220, 220);
+            this.itemPic3.TabIndex = 3;
+            // 
+            // itemPic4
+            // 
+            this.itemPic4.BackgroundImage = global::PcProsShop.Properties.Resources.Item_Ryzen5_5600X;
+            this.itemPic4.Location = new System.Drawing.Point(15, 45);
+            this.itemPic4.Name = "itemPic4";
+            this.itemPic4.Size = new System.Drawing.Size(220, 220);
+            this.itemPic4.TabIndex = 3;
+            // 
+            // itemPic5
+            // 
+            this.itemPic5.BackgroundImage = global::PcProsShop.Properties.Resources.Item_Ryzen5_5600X;
+            this.itemPic5.Location = new System.Drawing.Point(15, 45);
+            this.itemPic5.Name = "itemPic5";
+            this.itemPic5.Size = new System.Drawing.Size(220, 220);
+            this.itemPic5.TabIndex = 3;
+            // 
+            // itemPic6
+            // 
+            this.itemPic6.BackgroundImage = global::PcProsShop.Properties.Resources.Item_Ryzen5_5600X;
+            this.itemPic6.Location = new System.Drawing.Point(15, 45);
+            this.itemPic6.Name = "itemPic6";
+            this.itemPic6.Size = new System.Drawing.Size(220, 220);
+            this.itemPic6.TabIndex = 3;
             // 
             // UC_Home
             // 
@@ -217,5 +267,10 @@
         private Label price5;
         private Label price6;
         private Panel itemPic1;
+        private Panel itemPic4;
+        private Panel itemPic5;
+        private Panel itemPic2;
+        private Panel itemPic3;
+        private Panel itemPic6;
     }
 }

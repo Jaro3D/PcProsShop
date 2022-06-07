@@ -102,6 +102,11 @@ namespace PcProsShop.UserControls
             price6.BackColor = Color.FromArgb(0, Color.Black);
 
             itemPic1.BackColor = Color.FromArgb(0, Color.Black);
+            itemPic2.BackColor = Color.FromArgb(0, Color.Black);
+            itemPic3.BackColor = Color.FromArgb(0, Color.Black);
+            itemPic4.BackColor = Color.FromArgb(0, Color.Black);
+            itemPic5.BackColor = Color.FromArgb(0, Color.Black);
+            itemPic6.BackColor = Color.FromArgb(0, Color.Black);
         }
     }
 }
