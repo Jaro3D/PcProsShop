@@ -2,11 +2,19 @@ using PcProsShop.UserControls;
 
 namespace PcProsShop
 {
+    public enum Category
+    {
+        GPU,
+        CPU,
+        RAM
+    }
+
     public partial class Form1 : Form
     {
-        bool mouseDown;
+        private bool mouseDown;
         private Point offset;
         private int tabIndex = 0;
+        private Item[] inventory;
 
         public Form1()
         {
@@ -19,8 +27,11 @@ namespace PcProsShop
         {
             itemBackground.BackColor = Color.FromArgb(0, Color.Black);
             header.BackColor = Color.FromArgb(0, Color.Black);
+
             UC_Home ucHome = new UC_Home();
             AddUserControl(ucHome);
+
+            SwitchTab();
         }
 
         private void SwitchTab()
@@ -29,34 +40,53 @@ namespace PcProsShop
             {
                 case 0:
                     EnableNavButtons();
+
                     ButtonSelect(gpuButton);
                     ButtonDeselect(cpuButton);
                     ButtonDeselect(ramButton);
+
                     UC_Home ucHome = new UC_Home();
                     AddUserControl(ucHome);
+
+                    inventory = Database.LoadInventory(Category.GPU);
+                    //slogan.Text = inventory[0].Name;
+
                     break;
+
                 case 1:
                     EnableNavButtons();
+
                     ButtonSelect(cpuButton);
                     ButtonDeselect(gpuButton);
                     ButtonDeselect(ramButton);
+
                     break;
+
                 case 2:
                     EnableNavButtons();
+
                     ButtonSelect(ramButton);
                     ButtonDeselect(cpuButton);
                     ButtonDeselect(gpuButton);
+
                     break;
+
                 case 3:
                     DisableNavButtons();
+
                     UC_ShoppingCart ucCart = new UC_ShoppingCart();
                     AddUserControl(ucCart);
+
                     break;
+
                 case 4:
                     DisableNavButtons();
+
                     UC_Account ucAccount = new UC_Account();
                     AddUserControl(ucAccount);
+
                     break;
+
                 default:
                     break;
             }
@@ -172,7 +202,6 @@ namespace PcProsShop
         {
             tabIndex = 3;
             SwitchTab();
-            slogan.Text = Database.TestFunc();
         }
 
         private void accountButton_Click(object sender, EventArgs e)
