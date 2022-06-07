@@ -58,25 +58,75 @@ namespace PcProsShop.UserControls
         {
             if (invLength > 0)
             {
-                DisplayLength(0, 1, item1, price1);
-                DisplayLength(1, 2, item2, price2);
-                DisplayLength(2, 3, item3, price3);
-                DisplayLength(3, 4, item4, price4);
-                DisplayLength(4, 5, item5, price5);
-                DisplayLength(5, 6, item6, price6);
+                DisplayLength(0, 1, item1, itemPic1, price1);
+                DisplayLength(1, 2, item2, itemPic2, price2);
+                DisplayLength(2, 3, item3, itemPic3, price3);
+                DisplayLength(3, 4, item4, itemPic4, price4);
+                DisplayLength(4, 5, item5, itemPic5, price5);
+                DisplayLength(5, 6, item6, itemPic6, price6);
             }
         }
 
-        private void DisplayLength(int index, int requiredLength, Panel item, Label label)
+        private void DisplayLength(int index, int requiredLength, Panel item, Panel image, Label label)
         {
             if (requiredLength < invLength + 1)
             {
                 item.Visible = true;
                 label.Text = inventory[index].Price.ToString() + "€";
+                string name = inventory[index].Name;
+                DisplayImage(image, name);
             }
             else
             {
                 item.Visible = false;
+            }
+        }
+
+        private void DisplayImage(Panel image, string name)
+        {
+            switch (name)
+            {
+                //RAM
+                case "16GB Trident Z":
+                    image.BackgroundImage = Properties.Resources.Item_16GB_Trident_Z;
+                        break;
+                
+                //CPU
+                case "Ryzen 5 5600X":
+                    image.BackgroundImage = Properties.Resources.Item_Ryzen5_5600X;
+                    break;
+                case "i9 12900KS":
+                    image.BackgroundImage = Properties.Resources.Item_i9_12900KS;
+                    break;
+
+                //GPU
+                case "RTX3050":
+                    image.BackgroundImage = Properties.Resources.Item_RTX3050;
+                    break;
+                case "RTX3060 Ti":
+                    image.BackgroundImage = Properties.Resources.Item_RTX3060Ti;
+                    break;
+                case "RTX3080":
+                    image.BackgroundImage = Properties.Resources.Item_RTX3080;
+                    break;
+                case "RTX3090 Ti":
+                    image.BackgroundImage = Properties.Resources.Item_RTX3090Ti;
+                    break;
+                case "RX6500 XT":
+                    image.BackgroundImage = Properties.Resources.Item_RX6500XT;
+                    break;
+                case "RX6600 XT":
+                    image.BackgroundImage = Properties.Resources.Item_RX6600XT;
+                    break;
+                case "RX6800 XT":
+                    image.BackgroundImage = Properties.Resources.Item_RX6800XT;
+                    break;
+                case "RX6950 XT":
+                    image.BackgroundImage = Properties.Resources.Item_RX6950XT;
+                    break;
+
+                default:
+                    break;
             }
         }
 
