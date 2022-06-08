@@ -22,14 +22,15 @@ namespace PcProsShop
                 {
                     connection.Open();
 
-                    command.CommandText = @"SELECT count(*) FROM Item WHERE category = '" + category + "'";
+                    command.CommandText = @"SELECT count(*) FROM Item WHERE category = @category";
+                    command.Parameters.AddWithValue("@category", Convert.ToString(category));
 
                     //Capture how many items were selected
                     Int32 count = Convert.ToInt32(command.ExecuteScalar());
 
                     inventory = new Item[count];
 
-                    command.CommandText = @"SELECT * FROM Item WHERE category = '" + category + "' ORDER BY price";
+                    command.CommandText = @"SELECT * FROM Item WHERE category = @category ORDER BY price";
 
                     using (var reader = command.ExecuteReader())
                     {
@@ -58,6 +59,13 @@ namespace PcProsShop
 
         public static void CreateAccount(Account account)
         {
+            //Encryption
+            byte[] iv = Encryption.createIV();
+            byte[] key = Encryption.createKey(account.Password);
+            string identifier = Encryption.createHash(account.Mail);
+
+            account = Encryption.encryptAccount(account, key, iv);
+
             using (var connection = new SqlConnection(connectionString))
             {
                 using (var command = connection.CreateCommand())
@@ -74,8 +82,8 @@ namespace PcProsShop
                     command.Parameters.AddWithValue("@street", account.Street);
                     command.Parameters.AddWithValue("@zipCode", account.Zip);
                     command.Parameters.AddWithValue("@isAdmin", account.IsAdmin);
-                    command.Parameters.AddWithValue("@iv", "hdwuidgw");
-                    command.Parameters.AddWithValue("@identifier", "dsdsds");
+                    command.Parameters.AddWithValue("@iv", iv);
+                    command.Parameters.AddWithValue("@identifier", identifier);
 
                     command.ExecuteNonQuery();
 
