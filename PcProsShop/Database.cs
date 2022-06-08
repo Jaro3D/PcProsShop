@@ -90,5 +90,47 @@ namespace PcProsShop
                 }
             }
         }
+
+        public static Account LoadAccount(string email, string password)
+        {
+            Account account = new Account("Test");
+            string identifier = Encryption.createHash(email);
+            string iv = "";
+            byte[] key = Encryption.createKey(password);
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+
+                    command.CommandText = @"SELECT * FROM Account WHERE identifier = @identifier";
+                    command.Parameters.AddWithValue("@identifier", identifier);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            account.Id = Convert.ToInt32(reader["id"]);
+                            account.Fname = reader["firstName"].ToString();
+                            account.Lname = reader["lastName"].ToString();
+                            account.Mail = reader["email"].ToString();
+                            account.Password = reader["passwort"].ToString();
+                            account.City = reader["city"].ToString();
+                            account.Street = reader["street"].ToString();
+                            account.Zip = reader["zipCode"].ToString();
+                            account.IsAdmin = Convert.ToInt32(reader["isAdmin"]);
+                            iv = reader["iv"].ToString();
+                        }
+
+                        byte[] byteIv = Encoding.ASCII.GetBytes(iv);
+
+                        account = Encryption.decryptAccount(account, key, byteIv);
+
+                        return account;
+                    }
+                }
+            }
+        }
     }
 }

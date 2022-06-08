@@ -19,7 +19,7 @@ namespace PcProsShop
         private string city;
         private string street;
         private string zip;
-        private bool isAdmin;
+        private int isAdmin;
          
         /*
          * Setter and Getter
@@ -64,7 +64,7 @@ namespace PcProsShop
             get { return zip; }
             set { zip = value; }
         }
-        public bool IsAdmin
+        public int IsAdmin
         {
             get { return isAdmin; }
             set { isAdmin = value; }
@@ -79,7 +79,7 @@ namespace PcProsShop
          * Constructors
          */
         public Account() { }
-        public Account(int id, string fname, string lname, string mail, string password, string city, string street, string zip, bool isAdmin)
+        public Account(int id, string fname, string lname, string mail, string password, string city, string street, string zip, int isAdmin)
         {
             this.id = id;
             this.fname = fname;
@@ -108,7 +108,7 @@ namespace PcProsShop
                 this.city = "Musterstadt";
                 this.street = "Musterstraße";
                 this.zip = "69420";
-                this.isAdmin = false;
+                this.isAdmin = 0;
             }
 
         }

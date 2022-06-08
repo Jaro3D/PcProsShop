@@ -211,8 +211,8 @@ namespace PcProsShop
             tabIndex = 4;
             SwitchTab();
 
-            Account acc = new Account("Test");
-            Database.CreateAccount(acc);
+            Account acc = Database.LoadAccount("Max.Musterman@test.de", "Musterpassword");
+            MessageBox.Show(acc.Password);
         }
 
         private void logo_Click(object sender, EventArgs e)
