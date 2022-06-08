@@ -210,6 +210,9 @@ namespace PcProsShop
         {
             tabIndex = 4;
             SwitchTab();
+
+            Account acc = new Account("Test");
+            Database.CreateAccount(acc);
         }
 
         private void logo_Click(object sender, EventArgs e)

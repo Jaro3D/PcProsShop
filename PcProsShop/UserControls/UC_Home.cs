@@ -89,7 +89,7 @@ namespace PcProsShop.UserControls
                 //RAM
                 case "16GB Trident Z":
                     image.BackgroundImage = Properties.Resources.Item_16GB_Trident_Z;
-                        break;
+                    break;
                 
                 //CPU
                 case "Ryzen 5 5600X":

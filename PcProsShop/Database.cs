@@ -55,5 +55,32 @@ namespace PcProsShop
                 }
             }
         }
+
+        public static void CreateAccount(Account account)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"INSERT INTO Account (firstName, lastName, email, passwort, city, street, zipCode, isAdmin, iv, identifier)
+                    VALUES(@firstName, @lastName, @email, @password, @city, @street, @zipCode, @isAdmin, @iv, @identifier)";
+
+                    command.Parameters.AddWithValue("@firstName", account.Fname);
+                    command.Parameters.AddWithValue("@lastName", account.Lname);
+                    command.Parameters.AddWithValue("@email", account.Mail);
+                    command.Parameters.AddWithValue("@password", account.Password);
+                    command.Parameters.AddWithValue("@city", account.City);
+                    command.Parameters.AddWithValue("@street", account.Street);
+                    command.Parameters.AddWithValue("@zipCode", account.Zip);
+                    command.Parameters.AddWithValue("@isAdmin", account.IsAdmin);
+                    command.Parameters.AddWithValue("@iv", "hdwuidgw");
+                    command.Parameters.AddWithValue("@identifier", "dsdsds");
+
+                    command.ExecuteNonQuery();
+
+                }
+            }
+        }
     }
 }
