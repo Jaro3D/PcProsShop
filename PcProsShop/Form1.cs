@@ -14,6 +14,8 @@ namespace PcProsShop
         private bool mouseDown;
         private Point offset;
         private int tabIndex = 0;
+        private bool loggedIn = false;
+        private Account account;
 
         public Form1()
         {
@@ -89,12 +91,20 @@ namespace PcProsShop
 
                     break;
 
+                case 5:
+                    DisableNavButtons();
+
+                    UC_Login ucLogin = new UC_Login(this);
+                    AddUserControl(ucLogin);
+
+                    break;
+
                 default:
                     break;
             }
         }
 
-        private void AddUserControl(UserControl userControl)
+        public void AddUserControl(UserControl userControl)
         { 
             userControl.Dock = DockStyle.Fill;
             itemBackground.Controls.Clear();
@@ -208,7 +218,15 @@ namespace PcProsShop
 
         private void accountButton_Click(object sender, EventArgs e)
         {
-            tabIndex = 4;
+            if (loggedIn)
+            {
+                tabIndex = 4;
+            }
+            else
+            {
+                tabIndex = 5;
+            }
+            
             SwitchTab();
 
             Account acc = Database.LoadAccount("Max.Musterman@test.de", "Musterpassword");

@@ -118,11 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AccountIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AccountIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_i9-12900KS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_i9-12900KS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ItemBackgroundGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ItemBackgroundGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Item_16GB-Trident-Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_16GB-Trident-Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Item_Ryzen5-5600X" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_Ryzen5-5600X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Item_RX6950XT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_RX6950XT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Item_RX6600XT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_RX6600XT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AccountIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AccountIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ItemBackgroundBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ItemBackgroundBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,49 +148,34 @@
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ItemBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ItemBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PC Pros Logo_Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PC Pros Logo_Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HeaderBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HeaderBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_RTX3060Ti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_RTX3060Ti1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShoppingCartIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ShoppingCartIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_16GB-Trident-Z" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_16GB-Trident-Z.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_RTX3090Ti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_RTX3090Ti1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_i9-12900KS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_i9-12900KS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Item_RTX3050" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_RTX30501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Item_RTX3060Ti" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_RTX3060Ti1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HeaderBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeaderBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_RTX3080" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_RTX3080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_RTX3090Ti" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_RTX3090Ti1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Item_RX6500XT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_RX6500XT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_RX6600XT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_RX6600XT1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Item_RTX3050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Item_RTX30501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PC Pros Logo_Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PC Pros Logo_Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_RX6800XT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_RX6800XT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Item_RX6950XT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_RX6950XT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Item_Ryzen5-5600X" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Item_Ryzen5-5600X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LoginDevider" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginDevider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
