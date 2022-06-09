@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PcProsShop
 {
-    internal class Account
+    public class Account
     {
         /*
          * Attributes

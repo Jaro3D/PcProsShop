@@ -17,6 +17,7 @@ namespace PcProsShop
         private bool loggedIn = false;
         private int currentPage = 1;
         public int maxPage = 1;
+        public Account account;
 
         public Form1()
         {
