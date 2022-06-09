@@ -15,11 +15,17 @@ namespace PcProsShop.UserControls
         int tabIndex;
         private Item[] inventory;
         int invLength;
+        Form1 parentForm;
+        private int pageCount;
+        private int maxItemsPerPage = 6;
+        private int currentPage;
 
-        public UC_Home(int _tabIndex)
+        public UC_Home(int _tabIndex, Form1 parent, int page)
         {
             InitializeComponent();
             tabIndex = _tabIndex;
+            parentForm = parent;
+            currentPage = page;
             LoadItems();
             DisplayItems();
             
@@ -52,23 +58,43 @@ namespace PcProsShop.UserControls
             }
 
             invLength = inventory.Length;
+            pageCount = invLength / maxItemsPerPage;
+
+            if ((invLength % maxItemsPerPage) > 0)
+            {
+                pageCount++;
+            }
+
+            parentForm.maxPage = pageCount;
+
         }
 
         private void DisplayItems()
         {
+            int itemIndex = 0 + (maxItemsPerPage * (currentPage - 1));
+
             if (invLength > 0)
             {
-                DisplayLength(0, 1, item1, itemPic1, price1);
-                DisplayLength(1, 2, item2, itemPic2, price2);
-                DisplayLength(2, 3, item3, itemPic3, price3);
-                DisplayLength(3, 4, item4, itemPic4, price4);
-                DisplayLength(4, 5, item5, itemPic5, price5);
-                DisplayLength(5, 6, item6, itemPic6, price6);
+                DisplayLength(itemIndex, itemIndex +  1, item1, itemPic1, price1);
+                DisplayLength(itemIndex + 1, itemIndex + 2, item2, itemPic2, price2);
+                DisplayLength(itemIndex + 2, itemIndex + 3, item3, itemPic3, price3);
+                DisplayLength(itemIndex + 3, itemIndex + 4, item4, itemPic4, price4);
+                DisplayLength(itemIndex + 4, itemIndex + 5, item5, itemPic5, price5);
+                DisplayLength(itemIndex + 5, itemIndex + 6, item6, itemPic6, price6);
             }
         }
 
         private void DisplayLength(int index, int requiredLength, Panel item, Panel image, Label label)
         {
+            if (invLength > 6)
+            {
+                parentForm.EnablePageButtons();
+            }
+            else
+            { 
+                parentForm.DisablePageButtons();
+            }
+
             if (requiredLength < invLength + 1)
             {
                 item.Visible = true;

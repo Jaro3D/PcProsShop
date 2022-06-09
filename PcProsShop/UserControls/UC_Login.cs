@@ -12,18 +12,18 @@ namespace PcProsShop.UserControls
 {
     public partial class UC_Login : UserControl
     {
-        Form1 form;
+        Form1 parentForm;
 
-        public UC_Login(Form1 _form)
+        public UC_Login(Form1 parent)
         {
             InitializeComponent();
-            form = _form;
+            parentForm = parent;
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             UC_Registration ucRegistration = new UC_Registration();
-            form.AddUserControl(ucRegistration);
+            parentForm.AddUserControl(ucRegistration);
         }
 
         private void label1_MouseHover(object sender, EventArgs e)

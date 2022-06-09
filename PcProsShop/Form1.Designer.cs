@@ -36,6 +36,10 @@
             this.minimizeButton = new PcProsShop.PrettyButton();
             this.slogan = new System.Windows.Forms.Label();
             this.navbar = new System.Windows.Forms.Panel();
+            this.rightArrow = new PcProsShop.PrettyButton();
+            this.pageCountPanel = new System.Windows.Forms.Panel();
+            this.pageCount = new System.Windows.Forms.Label();
+            this.leftArrow = new PcProsShop.PrettyButton();
             this.ramButton = new PcProsShop.PrettyButton();
             this.cpuButton = new PcProsShop.PrettyButton();
             this.gpuButton = new PcProsShop.PrettyButton();
@@ -43,6 +47,7 @@
             this.itemBackground = new System.Windows.Forms.Panel();
             this.header.SuspendLayout();
             this.navbar.SuspendLayout();
+            this.pageCountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,6 +159,9 @@
             // navbar
             // 
             this.navbar.BackColor = System.Drawing.Color.White;
+            this.navbar.Controls.Add(this.rightArrow);
+            this.navbar.Controls.Add(this.pageCountPanel);
+            this.navbar.Controls.Add(this.leftArrow);
             this.navbar.Controls.Add(this.ramButton);
             this.navbar.Controls.Add(this.cpuButton);
             this.navbar.Controls.Add(this.gpuButton);
@@ -162,6 +170,64 @@
             this.navbar.Name = "navbar";
             this.navbar.Size = new System.Drawing.Size(200, 700);
             this.navbar.TabIndex = 2;
+            // 
+            // rightArrow
+            // 
+            this.rightArrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.rightArrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.rightArrow.BackgroundImage = global::PcProsShop.Properties.Resources.RightArrow;
+            this.rightArrow.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rightArrow.BorderRadius = 5;
+            this.rightArrow.BorderSize = 0;
+            this.rightArrow.FlatAppearance.BorderSize = 0;
+            this.rightArrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rightArrow.ForeColor = System.Drawing.Color.White;
+            this.rightArrow.Location = new System.Drawing.Point(136, 630);
+            this.rightArrow.Name = "rightArrow";
+            this.rightArrow.Size = new System.Drawing.Size(40, 40);
+            this.rightArrow.TabIndex = 6;
+            this.rightArrow.TextColor = System.Drawing.Color.White;
+            this.rightArrow.UseVisualStyleBackColor = false;
+            this.rightArrow.Click += new System.EventHandler(this.rightArrow_Click);
+            // 
+            // pageCountPanel
+            // 
+            this.pageCountPanel.BackgroundImage = global::PcProsShop.Properties.Resources.PageCountBackground;
+            this.pageCountPanel.Controls.Add(this.pageCount);
+            this.pageCountPanel.Location = new System.Drawing.Point(68, 630);
+            this.pageCountPanel.Name = "pageCountPanel";
+            this.pageCountPanel.Size = new System.Drawing.Size(60, 40);
+            this.pageCountPanel.TabIndex = 5;
+            // 
+            // pageCount
+            // 
+            this.pageCount.AutoSize = true;
+            this.pageCount.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pageCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(189)))), ((int)(((byte)(196)))));
+            this.pageCount.Location = new System.Drawing.Point(4, 6);
+            this.pageCount.Name = "pageCount";
+            this.pageCount.Size = new System.Drawing.Size(52, 34);
+            this.pageCount.TabIndex = 0;
+            this.pageCount.Text = "1 / 3";
+            // 
+            // leftArrow
+            // 
+            this.leftArrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.leftArrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.leftArrow.BackgroundImage = global::PcProsShop.Properties.Resources.LeftArrow;
+            this.leftArrow.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.leftArrow.BorderRadius = 5;
+            this.leftArrow.BorderSize = 0;
+            this.leftArrow.FlatAppearance.BorderSize = 0;
+            this.leftArrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.leftArrow.ForeColor = System.Drawing.Color.White;
+            this.leftArrow.Location = new System.Drawing.Point(20, 630);
+            this.leftArrow.Name = "leftArrow";
+            this.leftArrow.Size = new System.Drawing.Size(40, 40);
+            this.leftArrow.TabIndex = 4;
+            this.leftArrow.TextColor = System.Drawing.Color.White;
+            this.leftArrow.UseVisualStyleBackColor = false;
+            this.leftArrow.Click += new System.EventHandler(this.leftArrow_Click);
             // 
             // ramButton
             // 
@@ -259,6 +325,8 @@
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.navbar.ResumeLayout(false);
+            this.pageCountPanel.ResumeLayout(false);
+            this.pageCountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -278,5 +346,9 @@
         private PrettyButton ramButton;
         private PrettyButton cartButton;
         private PrettyButton accountButton;
+        private Panel pageCountPanel;
+        private PrettyButton leftArrow;
+        private PrettyButton rightArrow;
+        private Label pageCount;
     }
 }

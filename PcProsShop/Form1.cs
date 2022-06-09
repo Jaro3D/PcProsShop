@@ -16,6 +16,8 @@ namespace PcProsShop
         private int tabIndex = 0;
         private bool loggedIn = false;
         private Account account;
+        private int currentPage = 1;
+        public int maxPage = 1;
 
         public Form1()
         {
@@ -28,11 +30,14 @@ namespace PcProsShop
         {
             itemBackground.BackColor = Color.FromArgb(0, Color.Black);
             header.BackColor = Color.FromArgb(0, Color.Black);
+            pageCountPanel.BackColor = Color.FromArgb(0, Color.Black);
+            pageCount.BackColor = Color.FromArgb(0, Color.Black);
 
-            UC_Home ucHome = new UC_Home(tabIndex);
+            UC_Home ucHome = new UC_Home(tabIndex, this, currentPage);
             AddUserControl(ucHome);
 
             SwitchTab();
+            UpdatePageCount();
         }
 
         private void SwitchTab()
@@ -46,7 +51,7 @@ namespace PcProsShop
                     ButtonDeselect(cpuButton);
                     ButtonDeselect(ramButton);
 
-                    UC_Home ucHome = new UC_Home(tabIndex);
+                    UC_Home ucHome = new UC_Home(tabIndex, this, currentPage);
                     AddUserControl(ucHome);
 
                     break;
@@ -58,7 +63,7 @@ namespace PcProsShop
                     ButtonDeselect(gpuButton);
                     ButtonDeselect(ramButton);
 
-                    ucHome = new UC_Home(tabIndex);
+                    ucHome = new UC_Home(tabIndex, this, currentPage);
                     AddUserControl(ucHome);
 
                     break;
@@ -70,7 +75,7 @@ namespace PcProsShop
                     ButtonDeselect(cpuButton);
                     ButtonDeselect(gpuButton);
 
-                    ucHome = new UC_Home(tabIndex);
+                    ucHome = new UC_Home(tabIndex, this, currentPage);
                     AddUserControl(ucHome);
 
                     break;
@@ -117,12 +122,30 @@ namespace PcProsShop
             gpuButton.Visible = true;
             cpuButton.Visible = true;
             ramButton.Visible = true;
+            leftArrow.Visible = true;
+            rightArrow.Visible = true;
+            pageCountPanel.Visible = true;
         }
         private void DisableNavButtons()
         {
             gpuButton.Visible = false;
             cpuButton.Visible = false;
             ramButton.Visible = false;
+            leftArrow.Visible = false;
+            rightArrow.Visible = false;
+            pageCountPanel.Visible = false;
+        }
+        public void EnablePageButtons()
+        {
+            leftArrow.Visible = true;
+            rightArrow.Visible = true;
+            pageCountPanel.Visible = true;
+        }
+        public void DisablePageButtons()
+        {
+            leftArrow.Visible = false;
+            rightArrow.Visible = false;
+            pageCountPanel.Visible = false;
         }
 
         private void ButtonSelect(PrettyButton button)
@@ -201,18 +224,21 @@ namespace PcProsShop
         private void cpuButton_Click(object sender, EventArgs e)
         {
             tabIndex = 1;
+            currentPage = 1;
             SwitchTab();
         }
 
         private void ramButton_Click(object sender, EventArgs e)
         {
             tabIndex = 2;
+            currentPage = 1;
             SwitchTab();
         }
 
         private void cartButton_Click(object sender, EventArgs e)
         {
             tabIndex = 3;
+            currentPage = 1;
             SwitchTab();
         }
 
@@ -237,6 +263,33 @@ namespace PcProsShop
         {
             tabIndex = 0;
             SwitchTab();
+        }
+
+        private void leftArrow_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                UpdatePageCount();
+            }
+        }
+
+        private void rightArrow_Click(object sender, EventArgs e)
+        {
+            if (currentPage < maxPage)
+            {
+                currentPage++;
+                UpdatePageCount();
+                UC_Home ucHome = new UC_Home(tabIndex, this, currentPage);
+                AddUserControl(ucHome);
+            }
+        }
+
+        public void UpdatePageCount()
+        { 
+            pageCount.Text = currentPage.ToString() + " / " + maxPage.ToString();
+            UC_Home ucHome = new UC_Home(tabIndex, this, currentPage);
+            AddUserControl(ucHome);
         }
     }
 }

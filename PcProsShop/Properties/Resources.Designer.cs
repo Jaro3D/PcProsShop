@@ -233,6 +233,16 @@ namespace PcProsShop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LeftArrow {
+            get {
+                object obj = ResourceManager.GetObject("LeftArrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LoginDevider {
             get {
                 object obj = ResourceManager.GetObject("LoginDevider", resourceCulture);
@@ -243,9 +253,29 @@ namespace PcProsShop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PageCountBackground {
+            get {
+                object obj = ResourceManager.GetObject("PageCountBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PC_Pros_Logo_Transparent {
             get {
                 object obj = ResourceManager.GetObject("PC Pros Logo_Transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RightArrow {
+            get {
+                object obj = ResourceManager.GetObject("RightArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
