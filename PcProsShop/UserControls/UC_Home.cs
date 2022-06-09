@@ -12,13 +12,18 @@ namespace PcProsShop.UserControls
 {
     public partial class UC_Home : UserControl
     {
-        int tabIndex;
+        private int tabIndex;
         private Item[] inventory;
         int invLength;
         Form1 parentForm;
         private int pageCount;
         private int maxItemsPerPage = 6;
         private int currentPage;
+        private int itemIndex = 0;
+
+        private Panel[] items = new Panel[6];
+        private Panel[] images = new Panel[6];
+        private Label[] prices = new Label[6];
 
         public UC_Home(int _tabIndex, Form1 parent, int page)
         {
@@ -26,9 +31,33 @@ namespace PcProsShop.UserControls
             tabIndex = _tabIndex;
             parentForm = parent;
             currentPage = page;
+            GetElements();
             LoadItems();
             DisplayItems();
-            
+        }
+
+        private void GetElements()
+        {
+            items[0] = item1;
+            items[1] = item2;
+            items[2] = item3;
+            items[3] = item4;
+            items[4] = item5;
+            items[5] = item6;
+
+            images[0] = itemPic1;
+            images[1] = itemPic2;
+            images[2] = itemPic3;
+            images[3] = itemPic4;
+            images[4] = itemPic5;
+            images[5] = itemPic6;
+
+            prices[0] = price1;
+            prices[1] = price2;
+            prices[2] = price3;
+            prices[3] = price4;
+            prices[4] = price5;
+            prices[5] = price6;
         }
 
         private void LoadItems()
@@ -58,6 +87,19 @@ namespace PcProsShop.UserControls
             }
 
             invLength = inventory.Length;
+            int tempInvLength = invLength;
+
+            //Detect items that are out of stock
+            for (int i = 0; i < tempInvLength; i++)
+            {
+                if (inventory[i].Amount < 1)
+                {
+                    invLength--;
+                }
+            }
+
+            inventory = DeleteEmptyItems(inventory, invLength);
+
             pageCount = invLength / maxItemsPerPage;
 
             if ((invLength % maxItemsPerPage) > 0)
@@ -69,42 +111,62 @@ namespace PcProsShop.UserControls
 
         }
 
-        private void DisplayItems()
+        private Item[] DeleteEmptyItems(Item[] inv, int newLength)
         {
-            int itemIndex = 0 + (maxItemsPerPage * (currentPage - 1));
+            Item[] newInv = new Item[newLength];
+            int oldIndex = 0;
 
-            if (invLength > 0)
+            for (int i = 0; i < newLength; i++)
             {
-                DisplayLength(itemIndex, itemIndex +  1, item1, itemPic1, price1);
-                DisplayLength(itemIndex + 1, itemIndex + 2, item2, itemPic2, price2);
-                DisplayLength(itemIndex + 2, itemIndex + 3, item3, itemPic3, price3);
-                DisplayLength(itemIndex + 3, itemIndex + 4, item4, itemPic4, price4);
-                DisplayLength(itemIndex + 4, itemIndex + 5, item5, itemPic5, price5);
-                DisplayLength(itemIndex + 5, itemIndex + 6, item6, itemPic6, price6);
+                while (true)
+                {
+                    if (inv[oldIndex].Amount > 0)
+                    {
+                        newInv[i] = inv[oldIndex];
+                        break;
+                    }
+                    oldIndex++;
+                }
+                oldIndex++;
             }
+
+            return newInv;
         }
 
-        private void DisplayLength(int index, int requiredLength, Panel item, Panel image, Label label)
+        private void DisplayItems()
         {
+            itemIndex = 0 + (maxItemsPerPage * (currentPage - 1));
+
             if (invLength > 6)
             {
                 parentForm.EnablePageButtons();
             }
             else
-            { 
+            {
                 parentForm.DisablePageButtons();
             }
 
-            if (requiredLength < invLength + 1)
+            if (invLength > 0)
             {
-                item.Visible = true;
-                label.Text = inventory[index].Price.ToString() + "€";
-                string name = inventory[index].Name;
-                DisplayImage(image, name);
+                HideAllItems();
+
+                for (int i = 0; i < maxItemsPerPage; i++)
+                {
+                    if ((invLength - itemIndex) > i)
+                    {
+                        items[i].Visible = true;
+                        prices[i].Text = inventory[i + itemIndex].Price.ToString() + "€";
+                        DisplayImage(images[i], inventory[i + itemIndex].Name);
+                    }
+                }
             }
-            else
+        }
+
+        private void HideAllItems()
+        {
+            for (int i = 0; i < maxItemsPerPage; i++)
             {
-                item.Visible = false;
+                items[i].Visible = false;
             }
         }
 
