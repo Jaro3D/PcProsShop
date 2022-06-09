@@ -15,7 +15,6 @@ namespace PcProsShop
         private Point offset;
         private int tabIndex = 0;
         private bool loggedIn = false;
-        private Account account;
         private int currentPage = 1;
         public int maxPage = 1;
 
