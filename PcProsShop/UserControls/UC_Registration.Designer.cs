@@ -43,12 +43,12 @@
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.lastNameInput = new System.Windows.Forms.TextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.streetInput = new System.Windows.Forms.TextBox();
             this.streetLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.zipInput = new System.Windows.Forms.TextBox();
+            this.zipLabel = new System.Windows.Forms.Label();
+            this.city = new System.Windows.Forms.TextBox();
+            this.cityLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // signupButton
@@ -202,13 +202,13 @@
             this.lastNameLabel.TabIndex = 24;
             this.lastNameLabel.Text = "Last name";
             // 
-            // textBox2
+            // streetInput
             // 
-            this.textBox2.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(264, 354);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 27);
-            this.textBox2.TabIndex = 27;
+            this.streetInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.streetInput.Location = new System.Drawing.Point(264, 354);
+            this.streetInput.Name = "streetInput";
+            this.streetInput.Size = new System.Drawing.Size(269, 27);
+            this.streetInput.TabIndex = 27;
             // 
             // streetLabel
             // 
@@ -220,52 +220,52 @@
             this.streetLabel.TabIndex = 26;
             this.streetLabel.Text = "Street and number";
             // 
-            // textBox3
+            // zipInput
             // 
-            this.textBox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(407, 411);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(130, 27);
-            this.textBox3.TabIndex = 33;
+            this.zipInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.zipInput.Location = new System.Drawing.Point(407, 411);
+            this.zipInput.Name = "zipInput";
+            this.zipInput.Size = new System.Drawing.Size(130, 27);
+            this.zipInput.TabIndex = 33;
             // 
-            // label3
+            // zipLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(403, 384);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 28);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Zip code";
+            this.zipLabel.AutoSize = true;
+            this.zipLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.zipLabel.Location = new System.Drawing.Point(403, 384);
+            this.zipLabel.Name = "zipLabel";
+            this.zipLabel.Size = new System.Drawing.Size(81, 28);
+            this.zipLabel.TabIndex = 32;
+            this.zipLabel.Text = "Zip code";
             // 
-            // textBox4
+            // city
             // 
-            this.textBox4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(264, 411);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(130, 27);
-            this.textBox4.TabIndex = 31;
+            this.city.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.city.Location = new System.Drawing.Point(264, 411);
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(130, 27);
+            this.city.TabIndex = 31;
             // 
-            // label4
+            // cityLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(260, 384);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 28);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "City";
+            this.cityLabel.AutoSize = true;
+            this.cityLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cityLabel.Location = new System.Drawing.Point(260, 384);
+            this.cityLabel.Name = "cityLabel";
+            this.cityLabel.Size = new System.Drawing.Size(43, 28);
+            this.cityLabel.TabIndex = 30;
+            this.cityLabel.Text = "City";
             // 
             // UC_Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.zipInput);
+            this.Controls.Add(this.zipLabel);
+            this.Controls.Add(this.city);
+            this.Controls.Add(this.cityLabel);
+            this.Controls.Add(this.streetInput);
             this.Controls.Add(this.streetLabel);
             this.Controls.Add(this.lastNameInput);
             this.Controls.Add(this.lastNameLabel);
@@ -307,11 +307,11 @@
         private Label firstNameLabel;
         private TextBox lastNameInput;
         private Label lastNameLabel;
-        private TextBox textBox2;
+        private TextBox streetInput;
         private Label streetLabel;
-        private TextBox textBox3;
-        private Label label3;
-        private TextBox textBox4;
-        private Label label4;
+        private TextBox zipInput;
+        private Label zipLabel;
+        private TextBox city;
+        private Label cityLabel;
     }
 }
