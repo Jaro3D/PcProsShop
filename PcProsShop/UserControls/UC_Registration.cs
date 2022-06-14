@@ -24,22 +24,22 @@ namespace PcProsShop.UserControls
 
         private void signupButton_MouseEnter(object sender, EventArgs e)
         {
-            signupButton.ForeColor = Color.FromArgb(100, 238, 86, 132);
+            loginButton.ForeColor = Color.FromArgb(100, 238, 86, 132);
         }
 
         private void signupButton_MouseHover(object sender, EventArgs e)
         {
-            signupButton.ForeColor = Color.FromArgb(100, 238, 86, 132);
+            loginButton.ForeColor = Color.FromArgb(100, 238, 86, 132);
         }
 
         private void signupButton_MouseLeave(object sender, EventArgs e)
         {
-            signupButton.ForeColor = Color.Black;
+            loginButton.ForeColor = Color.Black;
         }
 
         private void signupButton_MouseDown(object sender, MouseEventArgs e)
         {
-            signupButton.ForeColor = Color.FromArgb(100, 0, 0, 255);
+            loginButton.ForeColor = Color.FromArgb(100, 0, 0, 255);
         }
     }
 }

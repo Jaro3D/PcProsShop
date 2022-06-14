@@ -92,7 +92,7 @@
             this.cartButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.cartButton.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartIcon;
             this.cartButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.cartButton.BorderRadius = 25;
+            this.cartButton.BorderRadius = 26;
             this.cartButton.BorderSize = 0;
             this.cartButton.FlatAppearance.BorderSize = 0;
             this.cartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

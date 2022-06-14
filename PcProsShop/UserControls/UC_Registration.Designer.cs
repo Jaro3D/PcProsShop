@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.signupButton = new System.Windows.Forms.Label();
+            this.loginButton = new System.Windows.Forms.Label();
             this.questionLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.passwordInput = new System.Windows.Forms.TextBox();
@@ -51,19 +51,19 @@
             this.cityLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // signupButton
+            // loginButton
             // 
-            this.signupButton.AutoSize = true;
-            this.signupButton.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.signupButton.Location = new System.Drawing.Point(426, 553);
-            this.signupButton.Name = "signupButton";
-            this.signupButton.Size = new System.Drawing.Size(72, 28);
-            this.signupButton.TabIndex = 18;
-            this.signupButton.Text = "SIGN UP";
-            this.signupButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.signupButton_MouseDown);
-            this.signupButton.MouseEnter += new System.EventHandler(this.signupButton_MouseEnter);
-            this.signupButton.MouseLeave += new System.EventHandler(this.signupButton_MouseLeave);
-            this.signupButton.MouseHover += new System.EventHandler(this.signupButton_MouseHover);
+            this.loginButton.AutoSize = true;
+            this.loginButton.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.loginButton.Location = new System.Drawing.Point(426, 553);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(59, 28);
+            this.loginButton.TabIndex = 18;
+            this.loginButton.Text = "LOGIN";
+            this.loginButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.signupButton_MouseDown);
+            this.loginButton.MouseEnter += new System.EventHandler(this.signupButton_MouseEnter);
+            this.loginButton.MouseLeave += new System.EventHandler(this.signupButton_MouseLeave);
+            this.loginButton.MouseHover += new System.EventHandler(this.signupButton_MouseHover);
             // 
             // questionLabel
             // 
@@ -178,7 +178,7 @@
             // 
             this.firstNameLabel.AutoSize = true;
             this.firstNameLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstNameLabel.Location = new System.Drawing.Point(260, 270);
+            this.firstNameLabel.Location = new System.Drawing.Point(260, 273);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(95, 28);
             this.firstNameLabel.TabIndex = 22;
@@ -196,7 +196,7 @@
             // 
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastNameLabel.Location = new System.Drawing.Point(403, 270);
+            this.lastNameLabel.Location = new System.Drawing.Point(403, 273);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(95, 28);
             this.lastNameLabel.TabIndex = 24;
@@ -214,7 +214,7 @@
             // 
             this.streetLabel.AutoSize = true;
             this.streetLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.streetLabel.Location = new System.Drawing.Point(260, 327);
+            this.streetLabel.Location = new System.Drawing.Point(260, 330);
             this.streetLabel.Name = "streetLabel";
             this.streetLabel.Size = new System.Drawing.Size(162, 28);
             this.streetLabel.TabIndex = 26;
@@ -232,7 +232,7 @@
             // 
             this.zipLabel.AutoSize = true;
             this.zipLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.zipLabel.Location = new System.Drawing.Point(403, 384);
+            this.zipLabel.Location = new System.Drawing.Point(403, 387);
             this.zipLabel.Name = "zipLabel";
             this.zipLabel.Size = new System.Drawing.Size(81, 28);
             this.zipLabel.TabIndex = 32;
@@ -250,7 +250,7 @@
             // 
             this.cityLabel.AutoSize = true;
             this.cityLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cityLabel.Location = new System.Drawing.Point(260, 384);
+            this.cityLabel.Location = new System.Drawing.Point(260, 387);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(43, 28);
             this.cityLabel.TabIndex = 30;
@@ -274,7 +274,7 @@
             this.Controls.Add(this.confPasswordInput);
             this.Controls.Add(this.confPasswordLabel);
             this.Controls.Add(this.signupButon);
-            this.Controls.Add(this.signupButton);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.questionLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.passwordInput);
@@ -292,7 +292,7 @@
 
         #endregion
 
-        private Label signupButton;
+        private Label loginButton;
         private Label questionLabel;
         private Panel panel1;
         private TextBox passwordInput;
