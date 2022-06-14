@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.closeButton = new PcProsShop.PrettyButton();
             this.header = new System.Windows.Forms.Panel();
+            this.adminButton = new System.Windows.Forms.Panel();
+            this.shoppingCartButton = new System.Windows.Forms.Panel();
             this.nameFirstChar = new System.Windows.Forms.Label();
-            this.cartButton = new PcProsShop.PrettyButton();
             this.accountButton = new PcProsShop.PrettyButton();
             this.minimizeButton = new PcProsShop.PrettyButton();
             this.slogan = new System.Windows.Forms.Label();
@@ -74,8 +75,9 @@
             // 
             this.header.BackColor = System.Drawing.Color.White;
             this.header.BackgroundImage = global::PcProsShop.Properties.Resources.HeaderBackground;
+            this.header.Controls.Add(this.adminButton);
+            this.header.Controls.Add(this.shoppingCartButton);
             this.header.Controls.Add(this.nameFirstChar);
-            this.header.Controls.Add(this.cartButton);
             this.header.Controls.Add(this.accountButton);
             this.header.Controls.Add(this.minimizeButton);
             this.header.Controls.Add(this.slogan);
@@ -87,6 +89,23 @@
             this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
             this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
             this.header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.header_MouseUp);
+            // 
+            // adminButton
+            // 
+            this.adminButton.BackgroundImage = global::PcProsShop.Properties.Resources.AdminIcon;
+            this.adminButton.Location = new System.Drawing.Point(528, 33);
+            this.adminButton.Name = "adminButton";
+            this.adminButton.Size = new System.Drawing.Size(50, 50);
+            this.adminButton.TabIndex = 7;
+            // 
+            // shoppingCartButton
+            // 
+            this.shoppingCartButton.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartIcon;
+            this.shoppingCartButton.Location = new System.Drawing.Point(597, 33);
+            this.shoppingCartButton.Name = "shoppingCartButton";
+            this.shoppingCartButton.Size = new System.Drawing.Size(50, 50);
+            this.shoppingCartButton.TabIndex = 6;
+            this.shoppingCartButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shoppingCartButton_MouseDown);
             // 
             // nameFirstChar
             // 
@@ -100,25 +119,6 @@
             this.nameFirstChar.TabIndex = 5;
             this.nameFirstChar.Text = "J";
             this.nameFirstChar.Click += new System.EventHandler(this.nameFirstChar_Click);
-            // 
-            // cartButton
-            // 
-            this.cartButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.cartButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.cartButton.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartIcon;
-            this.cartButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.cartButton.BorderRadius = 26;
-            this.cartButton.BorderSize = 0;
-            this.cartButton.FlatAppearance.BorderSize = 0;
-            this.cartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cartButton.ForeColor = System.Drawing.Color.White;
-            this.cartButton.Location = new System.Drawing.Point(597, 33);
-            this.cartButton.Name = "cartButton";
-            this.cartButton.Size = new System.Drawing.Size(50, 50);
-            this.cartButton.TabIndex = 4;
-            this.cartButton.TextColor = System.Drawing.Color.White;
-            this.cartButton.UseVisualStyleBackColor = false;
-            this.cartButton.Click += new System.EventHandler(this.cartButton_Click);
             // 
             // accountButton
             // 
@@ -323,6 +323,7 @@
             this.itemBackground.Name = "itemBackground";
             this.itemBackground.Size = new System.Drawing.Size(795, 595);
             this.itemBackground.TabIndex = 3;
+            this.itemBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.itemBackground_Paint);
             // 
             // Form1
             // 
@@ -359,12 +360,13 @@
         private PrettyButton gpuButton;
         private PrettyButton cpuButton;
         private PrettyButton ramButton;
-        private PrettyButton cartButton;
         private PrettyButton accountButton;
         private Panel pageCountPanel;
         private PrettyButton leftArrow;
         private PrettyButton rightArrow;
         private Label pageCount;
         private Label nameFirstChar;
+        private Panel shoppingCartButton;
+        private Panel adminButton;
     }
 }

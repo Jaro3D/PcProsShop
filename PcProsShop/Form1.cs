@@ -42,6 +42,7 @@ namespace PcProsShop
 
             SwitchTab();
             UpdatePageCount();
+            DeactivateAdminMode();
         }
 
         public void SwitchTab()
@@ -108,6 +109,14 @@ namespace PcProsShop
 
                     break;
 
+                case 6:
+                    DisableNavButtons();
+
+                    UC_Admin ucAdmin = new UC_Admin();
+                    AddUserControl(ucAdmin);
+
+                    break;
+
                 default:
                     break;
             }
@@ -150,6 +159,18 @@ namespace PcProsShop
             leftArrow.Visible = false;
             rightArrow.Visible = false;
             pageCountPanel.Visible = false;
+        }
+
+        public void ActivateAdminMode()
+        { 
+            isAdmin = true;
+            adminButton.Visible = true;
+        }
+
+        public void DeactivateAdminMode()
+        {
+            isAdmin = false;
+            adminButton.Visible = false;
         }
 
         private void ButtonSelect(PrettyButton button)
@@ -297,6 +318,17 @@ namespace PcProsShop
         private void nameFirstChar_Click(object sender, EventArgs e)
         {
             tabIndex = 4;
+            SwitchTab();
+        }
+
+        private void itemBackground_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void shoppingCartButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            tabIndex = 3;
             SwitchTab();
         }
     }

@@ -61,7 +61,7 @@ namespace PcProsShop.UserControls
 
                     if (accs.IsAdmin == 1)
                     {
-                        parentForm.isAdmin = true;
+                        parentForm.ActivateAdminMode();
                     }
 
                     parentForm.tabIndex = 0;
