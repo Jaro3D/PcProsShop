@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.closeButton = new PcProsShop.PrettyButton();
             this.header = new System.Windows.Forms.Panel();
+            this.nameFirstChar = new System.Windows.Forms.Label();
             this.cartButton = new PcProsShop.PrettyButton();
             this.accountButton = new PcProsShop.PrettyButton();
             this.minimizeButton = new PcProsShop.PrettyButton();
@@ -73,6 +74,7 @@
             // 
             this.header.BackColor = System.Drawing.Color.White;
             this.header.BackgroundImage = global::PcProsShop.Properties.Resources.HeaderBackground;
+            this.header.Controls.Add(this.nameFirstChar);
             this.header.Controls.Add(this.cartButton);
             this.header.Controls.Add(this.accountButton);
             this.header.Controls.Add(this.minimizeButton);
@@ -85,6 +87,18 @@
             this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.header_MouseDown);
             this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
             this.header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.header_MouseUp);
+            // 
+            // nameFirstChar
+            // 
+            this.nameFirstChar.AutoSize = true;
+            this.nameFirstChar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
+            this.nameFirstChar.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameFirstChar.ForeColor = System.Drawing.Color.White;
+            this.nameFirstChar.Location = new System.Drawing.Point(675, 42);
+            this.nameFirstChar.Name = "nameFirstChar";
+            this.nameFirstChar.Size = new System.Drawing.Size(25, 34);
+            this.nameFirstChar.TabIndex = 5;
+            this.nameFirstChar.Text = "J";
             // 
             // cartButton
             // 
@@ -350,5 +364,6 @@
         private PrettyButton leftArrow;
         private PrettyButton rightArrow;
         private Label pageCount;
+        private Label nameFirstChar;
     }
 }

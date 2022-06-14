@@ -19,6 +19,7 @@ namespace PcProsShop
         public Account account;
         public bool loggedIn = false;
         public bool isAdmin = false;
+        public Label accChar;
 
         public Form1()
         {
@@ -33,6 +34,8 @@ namespace PcProsShop
             header.BackColor = Color.FromArgb(0, Color.Black);
             pageCountPanel.BackColor = Color.FromArgb(0, Color.Black);
             pageCount.BackColor = Color.FromArgb(0, Color.Black);
+            nameFirstChar.Visible = false;
+            accChar = nameFirstChar;
 
             UC_Home ucHome = new UC_Home(tabIndex, this, currentPage);
             AddUserControl(ucHome);

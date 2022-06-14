@@ -48,13 +48,30 @@ namespace PcProsShop.UserControls
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Account accs = Database.LoadAccount(emailInput.Text, passwordInput.Text);
-            parentForm.account = accs;
-            parentForm.loggedIn = true;
-
-            if (accs.IsAdmin == 1)
+            if (emailInput.Text != "" && passwordInput.Text != "")
             {
-                parentForm.isAdmin = true;
+                try
+                {
+                    Account accs = Database.LoadAccount(emailInput.Text, passwordInput.Text);
+                    char accName = accs.Fname[0];
+                    parentForm.account = accs;
+                    parentForm.loggedIn = true;
+                    parentForm.accChar.Text = accName.ToString();
+
+                    if (accs.IsAdmin == 1)
+                    {
+                        parentForm.isAdmin = true;
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Email or password incorrect");
+                }
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled out");
             }
         }
     }

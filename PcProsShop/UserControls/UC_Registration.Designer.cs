@@ -47,7 +47,7 @@
             this.streetLabel = new System.Windows.Forms.Label();
             this.zipInput = new System.Windows.Forms.TextBox();
             this.zipLabel = new System.Windows.Forms.Label();
-            this.city = new System.Windows.Forms.TextBox();
+            this.cityInput = new System.Windows.Forms.TextBox();
             this.cityLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -148,6 +148,7 @@
             this.signupButon.Text = "SIGN UP";
             this.signupButon.TextColor = System.Drawing.Color.White;
             this.signupButon.UseVisualStyleBackColor = false;
+            this.signupButon.Click += new System.EventHandler(this.signupButon_Click);
             // 
             // confPasswordInput
             // 
@@ -239,13 +240,13 @@
             this.zipLabel.TabIndex = 32;
             this.zipLabel.Text = "Zip code";
             // 
-            // city
+            // cityInput
             // 
-            this.city.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.city.Location = new System.Drawing.Point(264, 411);
-            this.city.Name = "city";
-            this.city.Size = new System.Drawing.Size(130, 27);
-            this.city.TabIndex = 31;
+            this.cityInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cityInput.Location = new System.Drawing.Point(264, 411);
+            this.cityInput.Name = "cityInput";
+            this.cityInput.Size = new System.Drawing.Size(130, 27);
+            this.cityInput.TabIndex = 31;
             // 
             // cityLabel
             // 
@@ -264,7 +265,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.zipInput);
             this.Controls.Add(this.zipLabel);
-            this.Controls.Add(this.city);
+            this.Controls.Add(this.cityInput);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.streetInput);
             this.Controls.Add(this.streetLabel);
@@ -312,7 +313,7 @@
         private Label streetLabel;
         private TextBox zipInput;
         private Label zipLabel;
-        private TextBox city;
+        private TextBox cityInput;
         private Label cityLabel;
     }
 }

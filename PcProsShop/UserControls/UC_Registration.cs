@@ -50,5 +50,26 @@ namespace PcProsShop.UserControls
             UC_Login ucLogin = new UC_Login(parentForm);
             parentForm.AddUserControl(ucLogin);
         }
+
+        private void signupButon_Click(object sender, EventArgs e)
+        {
+            Account acc = new Account("Test");
+
+            if (emailInput.Text != "" && passwordInput.Text != "" && confPasswordInput.Text != "" && firstNameInput.Text != "" && lastNameInput.Text != "" && streetInput.Text != "" && cityInput.Text != "" && zipInput.Text != "")
+            {
+                if (passwordInput.Text == confPasswordInput.Text)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Passwords are not identical"); 
+                }
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled out");
+            }
+        }
     }
 }
