@@ -35,6 +35,8 @@
             this.streetLabel = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
             this.zipCodeLabel = new System.Windows.Forms.Label();
+            this.editAccountButton = new PcProsShop.PrettyButton();
+            this.saveAccountButton = new PcProsShop.PrettyButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,11 +118,52 @@
             this.zipCodeLabel.Text = "Zip code";
             this.zipCodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // editAccountButton
+            // 
+            this.editAccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.editAccountButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.editAccountButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.editAccountButton.BorderRadius = 8;
+            this.editAccountButton.BorderSize = 0;
+            this.editAccountButton.FlatAppearance.BorderSize = 0;
+            this.editAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editAccountButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.editAccountButton.ForeColor = System.Drawing.Color.White;
+            this.editAccountButton.Location = new System.Drawing.Point(89, 508);
+            this.editAccountButton.Name = "editAccountButton";
+            this.editAccountButton.Size = new System.Drawing.Size(100, 40);
+            this.editAccountButton.TabIndex = 7;
+            this.editAccountButton.Text = "Edit";
+            this.editAccountButton.TextColor = System.Drawing.Color.White;
+            this.editAccountButton.UseVisualStyleBackColor = false;
+            this.editAccountButton.Click += new System.EventHandler(this.editAccountButton_Click);
+            // 
+            // saveAccountButton
+            // 
+            this.saveAccountButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.saveAccountButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.saveAccountButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.saveAccountButton.BorderRadius = 8;
+            this.saveAccountButton.BorderSize = 0;
+            this.saveAccountButton.FlatAppearance.BorderSize = 0;
+            this.saveAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveAccountButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.saveAccountButton.ForeColor = System.Drawing.Color.White;
+            this.saveAccountButton.Location = new System.Drawing.Point(212, 508);
+            this.saveAccountButton.Name = "saveAccountButton";
+            this.saveAccountButton.Size = new System.Drawing.Size(100, 40);
+            this.saveAccountButton.TabIndex = 8;
+            this.saveAccountButton.Text = "Save";
+            this.saveAccountButton.TextColor = System.Drawing.Color.White;
+            this.saveAccountButton.UseVisualStyleBackColor = false;
+            // 
             // UC_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.saveAccountButton);
+            this.Controls.Add(this.editAccountButton);
             this.Controls.Add(this.zipCodeLabel);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.streetLabel);
@@ -146,5 +189,7 @@
         private Label streetLabel;
         private Label cityLabel;
         private Label zipCodeLabel;
+        private PrettyButton editAccountButton;
+        private PrettyButton saveAccountButton;
     }
 }

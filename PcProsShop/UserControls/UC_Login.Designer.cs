@@ -154,6 +154,7 @@
             this.Controls.Add(this.header);
             this.Name = "UC_Login";
             this.Size = new System.Drawing.Size(795, 595);
+            this.Load += new System.EventHandler(this.UC_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
