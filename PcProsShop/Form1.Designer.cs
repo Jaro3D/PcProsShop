@@ -99,6 +99,7 @@
             this.nameFirstChar.Size = new System.Drawing.Size(25, 34);
             this.nameFirstChar.TabIndex = 5;
             this.nameFirstChar.Text = "J";
+            this.nameFirstChar.Click += new System.EventHandler(this.nameFirstChar_Click);
             // 
             // cartButton
             // 

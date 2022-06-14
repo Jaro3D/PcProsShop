@@ -244,8 +244,6 @@ namespace PcProsShop
         private void cartButton_Click(object sender, EventArgs e)
         {
             tabIndex = 3;
-            currentPage = 1;
-            UpdatePageCount();
             SwitchTab();
         }
 
@@ -294,6 +292,12 @@ namespace PcProsShop
             pageCount.Text = currentPage.ToString() + " / " + maxPage.ToString();
             UC_Home ucHome = new UC_Home(tabIndex, this, currentPage);
             AddUserControl(ucHome);
+        }
+
+        private void nameFirstChar_Click(object sender, EventArgs e)
+        {
+            tabIndex = 4;
+            SwitchTab();
         }
     }
 }
