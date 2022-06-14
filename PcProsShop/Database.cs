@@ -66,6 +66,8 @@ namespace PcProsShop
 
             account = Encryption.encryptAccount(account, key, iv);
 
+            string ivString = Convert.ToBase64String(iv);
+
             using (var connection = new SqlConnection(connectionString))
             {
                 using (var command = connection.CreateCommand())
@@ -82,7 +84,7 @@ namespace PcProsShop
                     command.Parameters.AddWithValue("@street", account.Street);
                     command.Parameters.AddWithValue("@zipCode", account.Zip);
                     command.Parameters.AddWithValue("@isAdmin", account.IsAdmin);
-                    command.Parameters.AddWithValue("@iv", iv);
+                    command.Parameters.AddWithValue("@iv", ivString);
                     command.Parameters.AddWithValue("@identifier", identifier);
 
                     command.ExecuteNonQuery();
@@ -123,7 +125,7 @@ namespace PcProsShop
                             iv = reader["iv"].ToString();
                         }
 
-                        byte[] byteIv = Encoding.ASCII.GetBytes(iv);
+                        byte[] byteIv = Convert.FromBase64String(iv);
 
                         account = Encryption.decryptAccount(account, key, byteIv);
 

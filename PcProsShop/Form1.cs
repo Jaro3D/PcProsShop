@@ -14,10 +14,11 @@ namespace PcProsShop
         private bool mouseDown;
         private Point offset;
         private int tabIndex = 0;
-        private bool loggedIn = false;
         private int currentPage = 1;
         public int maxPage = 1;
         public Account account;
+        public bool loggedIn = false;
+        public bool isAdmin = false;
 
         public Form1()
         {
@@ -254,9 +255,6 @@ namespace PcProsShop
             }
             
             SwitchTab();
-
-            Account acc = Database.LoadAccount("Max.Musterman@test.de", "Musterpassword");
-            MessageBox.Show(acc.Password);
         }
 
         private void logo_Click(object sender, EventArgs e)

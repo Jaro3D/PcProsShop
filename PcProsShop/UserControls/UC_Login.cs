@@ -22,7 +22,7 @@ namespace PcProsShop.UserControls
 
         private void label1_Click(object sender, EventArgs e)
         {
-            UC_Registration ucRegistration = new UC_Registration();
+            UC_Registration ucRegistration = new UC_Registration(parentForm);
             parentForm.AddUserControl(ucRegistration);
         }
 
@@ -49,6 +49,13 @@ namespace PcProsShop.UserControls
         private void loginButton_Click(object sender, EventArgs e)
         {
             Account accs = Database.LoadAccount(emailInput.Text, passwordInput.Text);
+            parentForm.account = accs;
+            parentForm.loggedIn = true;
+
+            if (accs.IsAdmin == 1)
+            {
+                parentForm.isAdmin = true;
+            }
         }
     }
 }

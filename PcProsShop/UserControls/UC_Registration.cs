@@ -12,9 +12,12 @@ namespace PcProsShop.UserControls
 {
     public partial class UC_Registration : UserControl
     {
-        public UC_Registration()
+        Form1 parentForm;
+
+        public UC_Registration(Form1 parent)
         {
             InitializeComponent();
+            parentForm = parent;
         }
 
         private void UC_Registration_Load(object sender, EventArgs e)
@@ -40,6 +43,12 @@ namespace PcProsShop.UserControls
         private void signupButton_MouseDown(object sender, MouseEventArgs e)
         {
             loginButton.ForeColor = Color.FromArgb(100, 0, 0, 255);
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            UC_Login ucLogin = new UC_Login(parentForm);
+            parentForm.AddUserControl(ucLogin);
         }
     }
 }

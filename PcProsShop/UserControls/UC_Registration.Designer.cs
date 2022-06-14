@@ -60,6 +60,7 @@
             this.loginButton.Size = new System.Drawing.Size(59, 28);
             this.loginButton.TabIndex = 18;
             this.loginButton.Text = "LOGIN";
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             this.loginButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.signupButton_MouseDown);
             this.loginButton.MouseEnter += new System.EventHandler(this.signupButton_MouseEnter);
             this.loginButton.MouseLeave += new System.EventHandler(this.signupButton_MouseLeave);
