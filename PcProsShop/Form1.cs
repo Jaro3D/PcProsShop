@@ -331,5 +331,11 @@ namespace PcProsShop
             tabIndex = 3;
             SwitchTab();
         }
+
+        private void adminButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            tabIndex = 6;
+            SwitchTab();
+        }
     }
 }

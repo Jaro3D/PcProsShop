@@ -97,6 +97,7 @@
             this.adminButton.Name = "adminButton";
             this.adminButton.Size = new System.Drawing.Size(50, 50);
             this.adminButton.TabIndex = 7;
+            this.adminButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.adminButton_MouseDown);
             // 
             // shoppingCartButton
             // 
