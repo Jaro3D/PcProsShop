@@ -52,16 +52,20 @@ namespace PcProsShop.UserControls
             {
                 try
                 {
-                    Account accs = Database.LoadAccount(emailInput.Text, passwordInput.Text);
+                    Account accs = Database.LoadAccount(emailInput.Text.ToLower(), passwordInput.Text);
                     char accName = accs.Fname[0];
                     parentForm.account = accs;
                     parentForm.loggedIn = true;
+                    parentForm.accChar.Visible = true;
                     parentForm.accChar.Text = accName.ToString();
 
                     if (accs.IsAdmin == 1)
                     {
                         parentForm.isAdmin = true;
                     }
+
+                    parentForm.tabIndex = 0;
+                    parentForm.SwitchTab();
 
                 }
                 catch (Exception)

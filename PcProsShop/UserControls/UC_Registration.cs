@@ -57,13 +57,31 @@ namespace PcProsShop.UserControls
 
             if (emailInput.Text != "" && passwordInput.Text != "" && confPasswordInput.Text != "" && firstNameInput.Text != "" && lastNameInput.Text != "" && streetInput.Text != "" && cityInput.Text != "" && zipInput.Text != "")
             {
-                if (passwordInput.Text == confPasswordInput.Text)
+                if (!(Database.CheckIfEmailExists(emailInput.Text.ToLower())))
                 {
+                    if (passwordInput.Text == confPasswordInput.Text)
+                    {
+                        acc.Mail = emailInput.Text.ToLower();
+                        acc.Password = passwordInput.Text;
+                        acc.Fname = firstNameInput.Text;
+                        acc.Lname = lastNameInput.Text;
+                        acc.Street = streetInput.Text;
+                        acc.City = cityInput.Text;
+                        acc.Zip = zipInput.Text;
 
+                        Database.CreateAccount(acc);
+
+                        UC_Login ucLogin = new UC_Login(parentForm);
+                        parentForm.AddUserControl(ucLogin);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Passwords are not identical");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Passwords are not identical"); 
+                    MessageBox.Show("Email already exists");
                 }
             }
             else

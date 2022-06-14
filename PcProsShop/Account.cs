@@ -103,7 +103,7 @@ namespace PcProsShop
                 this.id = 1;
                 this.fname = "Max";
                 this.lname = "Mustermann";
-                this.mail = "Max.Musterman@test.de";
+                this.mail = "max.musterman@test.de";
                 this.password = "Musterpassword";
                 this.city = "Musterstadt";
                 this.street = "Musterstraße";

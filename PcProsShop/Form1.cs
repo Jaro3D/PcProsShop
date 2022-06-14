@@ -13,8 +13,8 @@ namespace PcProsShop
     {
         private bool mouseDown;
         private Point offset;
-        private int tabIndex = 0;
-        private int currentPage = 1;
+        public int tabIndex = 0;
+        public int currentPage = 1;
         public int maxPage = 1;
         public Account account;
         public bool loggedIn = false;
@@ -44,7 +44,7 @@ namespace PcProsShop
             UpdatePageCount();
         }
 
-        private void SwitchTab()
+        public void SwitchTab()
         {
             switch (tabIndex)
             {
@@ -229,6 +229,7 @@ namespace PcProsShop
         {
             tabIndex = 1;
             currentPage = 1;
+            UpdatePageCount();
             SwitchTab();
         }
 
@@ -236,6 +237,7 @@ namespace PcProsShop
         {
             tabIndex = 2;
             currentPage = 1;
+            UpdatePageCount();
             SwitchTab();
         }
 
@@ -243,6 +245,7 @@ namespace PcProsShop
         {
             tabIndex = 3;
             currentPage = 1;
+            UpdatePageCount();
             SwitchTab();
         }
 

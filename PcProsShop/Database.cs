@@ -134,5 +134,33 @@ namespace PcProsShop
                 }
             }
         }
+
+        public static bool CheckIfEmailExists(string email)
+        {
+            string identifier = Encryption.createHash(email);
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+
+                    command.CommandText = @"SELECT * FROM Account WHERE identifier = @identifier";
+                    command.Parameters.AddWithValue("@identifier", identifier);
+
+                    //Capture how many items were selected
+                    Int32 count = Convert.ToInt32(command.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }
