@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Configuration;
 
 namespace PcProsShop
 {
@@ -186,5 +187,27 @@ namespace PcProsShop
             }
             return plaintext;
         }
+        /*
+         * Fetches connection String from app.config.
+         * Input identifier: String containing the name of the requred ConnectionString from app.config
+         * Return: ConnectionString fetched from app.config
+         */
+        public static string getConnectionString(String identififer)
+        {
+            String conn = "";
+            try
+            {
+                conn = ConfigurationManager.ConnectionStrings[identififer].ConnectionString;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return conn;
+        }
+
+
+
     }
 }

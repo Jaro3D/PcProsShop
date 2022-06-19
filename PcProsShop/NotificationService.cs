@@ -12,23 +12,6 @@ namespace PcProsShop
 {
     internal static class NotificationService
     {
-        /*
-         * Mail address from mail account used to send Mails
-         */
-        private static string mailAccount = "PC_Pros@gmx.de";
-        
-        /*
-        * Password from mail account used to send Mails
-        */
-        private static string password = "22FFHh8qSheVJvk";
-        /*
-         *  smtp domain mail service provider
-         */
-        private static string mailServer = "mail.gmx.net";
-        /*
-         * smtp Port mail service provider
-         */
-        private static int serverPort = 587;
 
         /*
          * Formats double to format x..x,xx.
@@ -60,6 +43,12 @@ namespace PcProsShop
          */
         private static void sendMail(String destMail, String subject, String text)
         {
+            String[] mailCredentials = Encryption.getConnectionString("StringMail").Split(";");
+            string mailAccount = mailCredentials[0];
+            string password = mailCredentials[1];
+            string mailServer = mailCredentials[2];
+            int serverPort = Int32.Parse(mailCredentials[3]);
+
             Console.WriteLine("Preparing Mail");
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(mailAccount);

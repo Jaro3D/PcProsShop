@@ -9,6 +9,11 @@ namespace PcProsShop
 {
     internal class Database
     {
+
+        /*
+         * Use Encryption.getConnectionString("StringDB"); to fetch connectionString from app.config
+         * Maybe need to import "System.Configuration.ConfigurationManager" via NuGet
+         */
         static string connectionString = "Server=tcp:pc-pros-shop.database.windows.net,1433;Initial Catalog=pc-pros-shop-database;Persist Security Info=False;User ID=PCPros;Password=HJGVdzz2t23sd.edw;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         //Just a test function which has to be deleted later
