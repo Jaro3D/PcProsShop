@@ -139,7 +139,7 @@ namespace PcProsShop
             rightArrow.Visible = true;
             pageCountPanel.Visible = true;
         }
-        private void DisableNavButtons()
+        public void DisableNavButtons()
         {
             gpuButton.Visible = false;
             cpuButton.Visible = false;

@@ -249,6 +249,7 @@ namespace PcProsShop.UserControls
 
         private void itemPic1_MouseDown(object sender, MouseEventArgs e)
         {
+            parentForm.DisableNavButtons();
             UC_Item ucItem = new UC_Item(parentForm, this, inventory[0 + (maxItemsPerPage* (currentPage - 1))]);
             parentForm.AddUserControl(ucItem);
         }
