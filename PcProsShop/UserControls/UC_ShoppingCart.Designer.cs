@@ -63,6 +63,7 @@
             this.cartItemList.TabIndex = 0;
             this.cartItemList.UseCompatibleStateImageBehavior = false;
             this.cartItemList.View = System.Windows.Forms.View.Details;
+            this.cartItemList.SelectedIndexChanged += new System.EventHandler(this.cartItemList_SelectedIndexChanged);
             // 
             // nameColumn
             // 
