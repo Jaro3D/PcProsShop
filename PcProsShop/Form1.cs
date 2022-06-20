@@ -96,7 +96,7 @@ namespace PcProsShop
                 case 4:
                     DisableNavButtons();
 
-                    UC_Account ucAccount = new UC_Account(this);
+                    UC_Account ucAccount = new UC_Account(this, account);
                     AddUserControl(ucAccount);
 
                     break;

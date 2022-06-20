@@ -98,6 +98,43 @@ namespace PcProsShop
             }
         }
 
+        public static void UpdateAccount(Account account)
+        {
+            //Encryption
+            byte[] iv = Encryption.createIV();
+            byte[] key = Encryption.createKey(account.Password);
+            string identifier = Encryption.createHash(account.Mail);
+
+            account = Encryption.encryptAccount(account, key, iv);
+
+            string ivString = Convert.ToBase64String(iv);
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"UPDATE Account 
+                                            SET firstName = @firstName, lastName = @lastName, email = @email, passwort = @passwort, city = @city, street = @street, zipCode = @zipCode, iv = @iv, identifier = @identifier
+                                            WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@firstName", account.Fname);
+                    command.Parameters.AddWithValue("@lastName", account.Lname);
+                    command.Parameters.AddWithValue("@email", account.Mail);
+                    command.Parameters.AddWithValue("@passwort", account.Password);
+                    command.Parameters.AddWithValue("@city", account.City);
+                    command.Parameters.AddWithValue("@street", account.Street);
+                    command.Parameters.AddWithValue("@zipCode", account.Zip);
+                    command.Parameters.AddWithValue("@iv", ivString);
+                    command.Parameters.AddWithValue("@identifier", identifier);
+                    command.Parameters.AddWithValue("@id", account.Id);
+
+                    command.ExecuteNonQuery();
+
+                }
+            }
+        }
+
         public static Account LoadAccount(string email, string password)
         {
             Account account = new Account("Test");

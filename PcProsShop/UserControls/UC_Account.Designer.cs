@@ -37,7 +37,19 @@
             this.zipCodeLabel = new System.Windows.Forms.Label();
             this.editAccountButton = new PcProsShop.PrettyButton();
             this.saveAccountButton = new PcProsShop.PrettyButton();
+            this.editPanel = new System.Windows.Forms.Panel();
+            this.zipInput = new System.Windows.Forms.TextBox();
+            this.zipLabel = new System.Windows.Forms.Label();
+            this.cityInput = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.streetInput = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lastNameInput = new System.Windows.Forms.TextBox();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.firstNameInput = new System.Windows.Forms.TextBox();
+            this.firstNameLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.editPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -156,12 +168,121 @@
             this.saveAccountButton.Text = "Save";
             this.saveAccountButton.TextColor = System.Drawing.Color.White;
             this.saveAccountButton.UseVisualStyleBackColor = false;
+            this.saveAccountButton.Click += new System.EventHandler(this.saveAccountButton_Click);
+            // 
+            // editPanel
+            // 
+            this.editPanel.Controls.Add(this.zipInput);
+            this.editPanel.Controls.Add(this.zipLabel);
+            this.editPanel.Controls.Add(this.cityInput);
+            this.editPanel.Controls.Add(this.label1);
+            this.editPanel.Controls.Add(this.streetInput);
+            this.editPanel.Controls.Add(this.label2);
+            this.editPanel.Controls.Add(this.lastNameInput);
+            this.editPanel.Controls.Add(this.lastNameLabel);
+            this.editPanel.Controls.Add(this.firstNameInput);
+            this.editPanel.Controls.Add(this.firstNameLabel);
+            this.editPanel.Location = new System.Drawing.Point(260, 178);
+            this.editPanel.Name = "editPanel";
+            this.editPanel.Size = new System.Drawing.Size(319, 309);
+            this.editPanel.TabIndex = 9;
+            // 
+            // zipInput
+            // 
+            this.zipInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.zipInput.Location = new System.Drawing.Point(162, 205);
+            this.zipInput.Name = "zipInput";
+            this.zipInput.Size = new System.Drawing.Size(130, 27);
+            this.zipInput.TabIndex = 43;
+            // 
+            // zipLabel
+            // 
+            this.zipLabel.AutoSize = true;
+            this.zipLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.zipLabel.Location = new System.Drawing.Point(158, 181);
+            this.zipLabel.Name = "zipLabel";
+            this.zipLabel.Size = new System.Drawing.Size(81, 28);
+            this.zipLabel.TabIndex = 42;
+            this.zipLabel.Text = "Zip code";
+            // 
+            // cityInput
+            // 
+            this.cityInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cityInput.Location = new System.Drawing.Point(19, 205);
+            this.cityInput.Name = "cityInput";
+            this.cityInput.Size = new System.Drawing.Size(130, 27);
+            this.cityInput.TabIndex = 41;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(15, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 28);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "City";
+            // 
+            // streetInput
+            // 
+            this.streetInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.streetInput.Location = new System.Drawing.Point(19, 148);
+            this.streetInput.Name = "streetInput";
+            this.streetInput.Size = new System.Drawing.Size(273, 27);
+            this.streetInput.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(15, 124);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 28);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Street and number";
+            // 
+            // lastNameInput
+            // 
+            this.lastNameInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameInput.Location = new System.Drawing.Point(19, 92);
+            this.lastNameInput.Name = "lastNameInput";
+            this.lastNameInput.Size = new System.Drawing.Size(273, 27);
+            this.lastNameInput.TabIndex = 37;
+            // 
+            // lastNameLabel
+            // 
+            this.lastNameLabel.AutoSize = true;
+            this.lastNameLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lastNameLabel.Location = new System.Drawing.Point(15, 68);
+            this.lastNameLabel.Name = "lastNameLabel";
+            this.lastNameLabel.Size = new System.Drawing.Size(95, 28);
+            this.lastNameLabel.TabIndex = 36;
+            this.lastNameLabel.Text = "Last name";
+            // 
+            // firstNameInput
+            // 
+            this.firstNameInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameInput.Location = new System.Drawing.Point(19, 37);
+            this.firstNameInput.Name = "firstNameInput";
+            this.firstNameInput.Size = new System.Drawing.Size(273, 27);
+            this.firstNameInput.TabIndex = 35;
+            // 
+            // firstNameLabel
+            // 
+            this.firstNameLabel.AutoSize = true;
+            this.firstNameLabel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.firstNameLabel.Location = new System.Drawing.Point(15, 13);
+            this.firstNameLabel.Name = "firstNameLabel";
+            this.firstNameLabel.Size = new System.Drawing.Size(95, 28);
+            this.firstNameLabel.TabIndex = 34;
+            this.firstNameLabel.Text = "First name";
             // 
             // UC_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.editPanel);
             this.Controls.Add(this.saveAccountButton);
             this.Controls.Add(this.editAccountButton);
             this.Controls.Add(this.zipCodeLabel);
@@ -175,6 +296,8 @@
             this.Load += new System.EventHandler(this.UC_Account_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.editPanel.ResumeLayout(false);
+            this.editPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +314,16 @@
         private Label zipCodeLabel;
         private PrettyButton editAccountButton;
         private PrettyButton saveAccountButton;
+        private Panel editPanel;
+        private TextBox zipInput;
+        private Label zipLabel;
+        private TextBox cityInput;
+        private Label label1;
+        private TextBox streetInput;
+        private Label label2;
+        private TextBox lastNameInput;
+        private Label lastNameLabel;
+        private TextBox firstNameInput;
+        private Label firstNameLabel;
     }
 }

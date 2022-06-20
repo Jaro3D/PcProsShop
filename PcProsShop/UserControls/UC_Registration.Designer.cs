@@ -209,7 +209,7 @@
             this.streetInput.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.streetInput.Location = new System.Drawing.Point(264, 354);
             this.streetInput.Name = "streetInput";
-            this.streetInput.Size = new System.Drawing.Size(269, 27);
+            this.streetInput.Size = new System.Drawing.Size(274, 27);
             this.streetInput.TabIndex = 27;
             // 
             // streetLabel
