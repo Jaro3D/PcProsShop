@@ -170,7 +170,7 @@ namespace PcProsShop.UserControls
             }
         }
 
-        private void DisplayImage(Panel image, string name)
+        public void DisplayImage(Panel image, string name)
         {
             switch (name)
             {
@@ -245,6 +245,12 @@ namespace PcProsShop.UserControls
             itemPic4.BackColor = Color.FromArgb(0, Color.Black);
             itemPic5.BackColor = Color.FromArgb(0, Color.Black);
             itemPic6.BackColor = Color.FromArgb(0, Color.Black);
+        }
+
+        private void itemPic1_MouseDown(object sender, MouseEventArgs e)
+        {
+            UC_Item ucItem = new UC_Item(parentForm, this, inventory[0 + (maxItemsPerPage* (currentPage - 1))]);
+            parentForm.AddUserControl(ucItem);
         }
     }
 }

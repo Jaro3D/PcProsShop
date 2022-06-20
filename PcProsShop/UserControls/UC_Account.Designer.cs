@@ -182,7 +182,7 @@
             this.editPanel.Controls.Add(this.lastNameLabel);
             this.editPanel.Controls.Add(this.firstNameInput);
             this.editPanel.Controls.Add(this.firstNameLabel);
-            this.editPanel.Location = new System.Drawing.Point(260, 178);
+            this.editPanel.Location = new System.Drawing.Point(68, 178);
             this.editPanel.Name = "editPanel";
             this.editPanel.Size = new System.Drawing.Size(319, 309);
             this.editPanel.TabIndex = 9;
