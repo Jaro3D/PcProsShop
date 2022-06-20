@@ -100,6 +100,7 @@
             this.itemPic4.Name = "itemPic4";
             this.itemPic4.Size = new System.Drawing.Size(220, 220);
             this.itemPic4.TabIndex = 3;
+            this.itemPic4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.itemPic4_MouseDown);
             // 
             // price4
             // 
@@ -129,6 +130,7 @@
             this.itemPic5.Name = "itemPic5";
             this.itemPic5.Size = new System.Drawing.Size(220, 220);
             this.itemPic5.TabIndex = 3;
+            this.itemPic5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.itemPic5_MouseDown);
             // 
             // price5
             // 
@@ -157,6 +159,7 @@
             this.itemPic2.Name = "itemPic2";
             this.itemPic2.Size = new System.Drawing.Size(220, 220);
             this.itemPic2.TabIndex = 3;
+            this.itemPic2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.itemPic2_MouseDown);
             // 
             // price2
             // 
@@ -185,6 +188,7 @@
             this.itemPic3.Name = "itemPic3";
             this.itemPic3.Size = new System.Drawing.Size(220, 220);
             this.itemPic3.TabIndex = 3;
+            this.itemPic3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.itemPic3_MouseDown);
             // 
             // price3
             // 
@@ -213,6 +217,7 @@
             this.itemPic6.Name = "itemPic6";
             this.itemPic6.Size = new System.Drawing.Size(220, 220);
             this.itemPic6.TabIndex = 3;
+            this.itemPic6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.itemPic6_MouseDown);
             // 
             // price6
             // 

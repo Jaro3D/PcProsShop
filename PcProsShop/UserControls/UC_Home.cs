@@ -253,5 +253,40 @@ namespace PcProsShop.UserControls
             UC_Item ucItem = new UC_Item(parentForm, this, inventory[0 + (maxItemsPerPage* (currentPage - 1))]);
             parentForm.AddUserControl(ucItem);
         }
+
+        private void itemPic2_MouseDown(object sender, MouseEventArgs e)
+        {
+            parentForm.DisableNavButtons();
+            UC_Item ucItem = new UC_Item(parentForm, this, inventory[1 + (maxItemsPerPage * (currentPage - 1))]);
+            parentForm.AddUserControl(ucItem);
+        }
+
+        private void itemPic3_MouseDown(object sender, MouseEventArgs e)
+        {
+            parentForm.DisableNavButtons();
+            UC_Item ucItem = new UC_Item(parentForm, this, inventory[2 + (maxItemsPerPage * (currentPage - 1))]);
+            parentForm.AddUserControl(ucItem);
+        }
+
+        private void itemPic4_MouseDown(object sender, MouseEventArgs e)
+        {
+            parentForm.DisableNavButtons();
+            UC_Item ucItem = new UC_Item(parentForm, this, inventory[3 + (maxItemsPerPage * (currentPage - 1))]);
+            parentForm.AddUserControl(ucItem);
+        }
+
+        private void itemPic5_MouseDown(object sender, MouseEventArgs e)
+        {
+            parentForm.DisableNavButtons();
+            UC_Item ucItem = new UC_Item(parentForm, this, inventory[4 + (maxItemsPerPage * (currentPage - 1))]);
+            parentForm.AddUserControl(ucItem);
+        }
+
+        private void itemPic6_MouseDown(object sender, MouseEventArgs e)
+        {
+            parentForm.DisableNavButtons();
+            UC_Item ucItem = new UC_Item(parentForm, this, inventory[5 + (maxItemsPerPage * (currentPage - 1))]);
+            parentForm.AddUserControl(ucItem);
+        }
     }
 }
