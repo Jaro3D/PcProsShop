@@ -18,12 +18,17 @@ namespace PcProsShop.UserControls
             InitializeComponent();
             parentForm = parent;
             LoadItemsToList();
+            itemAmountLabel.BackColor = Color.FromArgb(0, Color.Black);
         }
 
         private void LoadItemsToList()
         {
+            cartItemList.Items.Clear();
+
             if (parentForm.cartItems.Count > 0)
             {
+                editPanel.Visible = true;
+
                 foreach (CartItem item in parentForm.cartItems)
                 {
                     ListViewItem lViewItem = new ListViewItem(item.Cartitem.Name);
@@ -33,11 +38,26 @@ namespace PcProsShop.UserControls
                     cartItemList.Items.Add(lViewItem);
                 }
             }
+            else
+            {
+                editPanel.Visible = false;
+            }
         }
 
         private void UC_ShoppingCart_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(cartItemList.Items.IndexOf(cartItemList.SelectedItems[0]).ToString());
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            parentForm.cartItems.RemoveAt(cartItemList.Items.IndexOf(cartItemList.SelectedItems[0]));
+            LoadItemsToList();
         }
     }
 }

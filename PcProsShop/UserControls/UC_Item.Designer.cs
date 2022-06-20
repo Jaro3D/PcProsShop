@@ -139,7 +139,7 @@
             this.addButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
             this.addButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
             this.addButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.addButton.BorderRadius = 6;
+            this.addButton.BorderRadius = 5;
             this.addButton.BorderSize = 0;
             this.addButton.FlatAppearance.BorderSize = 0;
             this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
