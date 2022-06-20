@@ -13,6 +13,8 @@ namespace PcProsShop.UserControls
     public partial class UC_ShoppingCart : UserControl
     {
         Form1 parentForm;
+        int currentAmount;
+
         public UC_ShoppingCart(Form1 parent)
         {
             InitializeComponent();
@@ -53,9 +55,9 @@ namespace PcProsShop.UserControls
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            int selectIndex = cartItemList.Items.IndexOf(cartItemList.SelectedItems[0]);
-            MessageBox.Show(selectIndex.ToString());
-            LoadSelectedItem(selectIndex);
+            int i = cartItemList.FocusedItem.Index;
+            parentForm.cartItems[i].Amount = currentAmount;
+            LoadItemsToList();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -75,7 +77,38 @@ namespace PcProsShop.UserControls
         {
             itemName.Text = parentForm.cartItems[selectedIndex].Cartitem.Name;
             itemPrice.Text = parentForm.cartItems[selectedIndex].Cartitem.Price.ToString() + "€";
-            itemAmountLabel.Text = parentForm.cartItems[selectedIndex].Amount.ToString();
+            currentAmount = parentForm.cartItems[selectedIndex].Amount;
+            itemAmountLabel.Text = currentAmount.ToString();
+        }
+
+        private void editPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UpdateCurrentAmount()
+        {
+            itemAmountLabel.Text = currentAmount.ToString();
+        }
+
+        private void leftArrow_Click(object sender, EventArgs e)
+        {
+            if (currentAmount > 1)
+            {
+                currentAmount--;
+                UpdateCurrentAmount();
+            }
+        }
+
+        private void rightArrow_Click(object sender, EventArgs e)
+        {
+            int i = cartItemList.FocusedItem.Index;
+
+            if (parentForm.cartItems[i].Cartitem.Amount > currentAmount)
+            {
+                currentAmount++;
+                UpdateCurrentAmount();
+            }
         }
     }
 }

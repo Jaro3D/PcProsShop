@@ -41,6 +41,7 @@
             this.editButton = new PcProsShop.PrettyButton();
             this.deleteButton = new PcProsShop.PrettyButton();
             this.editPanel = new System.Windows.Forms.Panel();
+            this.prettyButton1 = new PcProsShop.PrettyButton();
             this.pageCountPanel.SuspendLayout();
             this.editPanel.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +119,7 @@
             this.rightArrow.TabIndex = 12;
             this.rightArrow.TextColor = System.Drawing.Color.White;
             this.rightArrow.UseVisualStyleBackColor = false;
+            this.rightArrow.Click += new System.EventHandler(this.rightArrow_Click);
             // 
             // itemAmountLabel
             // 
@@ -147,6 +149,7 @@
             this.leftArrow.TabIndex = 10;
             this.leftArrow.TextColor = System.Drawing.Color.White;
             this.leftArrow.UseVisualStyleBackColor = false;
+            this.leftArrow.Click += new System.EventHandler(this.leftArrow_Click);
             // 
             // pageCountPanel
             // 
@@ -159,8 +162,8 @@
             // 
             // editButton
             // 
-            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
-            this.editButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.editButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.editButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.editButton.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.editButton.BorderRadius = 5;
             this.editButton.BorderSize = 0;
@@ -199,6 +202,7 @@
             // 
             // editPanel
             // 
+            this.editPanel.Controls.Add(this.prettyButton1);
             this.editPanel.Controls.Add(this.pageCountPanel);
             this.editPanel.Controls.Add(this.deleteButton);
             this.editPanel.Controls.Add(this.itemName);
@@ -208,8 +212,28 @@
             this.editPanel.Controls.Add(this.leftArrow);
             this.editPanel.Location = new System.Drawing.Point(448, 48);
             this.editPanel.Name = "editPanel";
-            this.editPanel.Size = new System.Drawing.Size(283, 257);
+            this.editPanel.Size = new System.Drawing.Size(283, 521);
             this.editPanel.TabIndex = 15;
+            this.editPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.editPanel_Paint);
+            // 
+            // prettyButton1
+            // 
+            this.prettyButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.prettyButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.prettyButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.prettyButton1.BorderRadius = 5;
+            this.prettyButton1.BorderSize = 0;
+            this.prettyButton1.FlatAppearance.BorderSize = 0;
+            this.prettyButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prettyButton1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.prettyButton1.ForeColor = System.Drawing.Color.White;
+            this.prettyButton1.Location = new System.Drawing.Point(25, 254);
+            this.prettyButton1.Name = "prettyButton1";
+            this.prettyButton1.Size = new System.Drawing.Size(218, 40);
+            this.prettyButton1.TabIndex = 15;
+            this.prettyButton1.Text = "Checkout";
+            this.prettyButton1.TextColor = System.Drawing.Color.White;
+            this.prettyButton1.UseVisualStyleBackColor = false;
             // 
             // UC_ShoppingCart
             // 
@@ -244,5 +268,6 @@
         private PrettyButton editButton;
         private PrettyButton deleteButton;
         private Panel editPanel;
+        private PrettyButton prettyButton1;
     }
 }
