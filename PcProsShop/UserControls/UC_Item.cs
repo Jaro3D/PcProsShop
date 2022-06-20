@@ -68,5 +68,11 @@ namespace PcProsShop.UserControls
                 UpdateItemAmount();
             }
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            CartItem cItem = new CartItem(item, itemAmount);
+            parentForm.cartItems.Add(cItem);
+        }
     }
 }

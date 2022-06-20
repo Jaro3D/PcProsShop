@@ -151,6 +151,7 @@
             this.addButton.Text = "Add to cart";
             this.addButton.TextColor = System.Drawing.Color.White;
             this.addButton.UseVisualStyleBackColor = false;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // stockLabel
             // 

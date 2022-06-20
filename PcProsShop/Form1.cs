@@ -20,6 +20,7 @@ namespace PcProsShop
         public bool loggedIn = false;
         public bool isAdmin = false;
         public Label accChar;
+        public List<CartItem> cartItems = new List<CartItem>();
 
         public Form1()
         {
@@ -88,7 +89,7 @@ namespace PcProsShop
                 case 3:
                     DisableNavButtons();
 
-                    UC_ShoppingCart ucCart = new UC_ShoppingCart();
+                    UC_ShoppingCart ucCart = new UC_ShoppingCart(this);
                     AddUserControl(ucCart);
 
                     break;
