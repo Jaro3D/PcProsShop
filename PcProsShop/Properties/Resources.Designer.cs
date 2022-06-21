@@ -319,5 +319,15 @@ namespace PcProsShop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShoppingCartNotfIcon {
+            get {
+                object obj = ResourceManager.GetObject("ShoppingCartNotfIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

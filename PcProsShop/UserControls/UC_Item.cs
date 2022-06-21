@@ -73,6 +73,7 @@ namespace PcProsShop.UserControls
         {
             CartItem cItem = new CartItem(item, itemAmount);
             parentForm.cartItems.Add(cItem);
+            parentForm.cartNotificationIcon.Visible = true;
         }
     }
 }

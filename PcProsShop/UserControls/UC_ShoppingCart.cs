@@ -14,6 +14,7 @@ namespace PcProsShop.UserControls
     {
         Form1 parentForm;
         int currentAmount;
+        private int currentItemIndex = 0;
 
         public UC_ShoppingCart(Form1 parent)
         {
@@ -31,7 +32,7 @@ namespace PcProsShop.UserControls
             {
                 editPanel.Visible = true;
 
-                LoadSelectedItem(0);
+                LoadSelectedItem(currentItemIndex);
 
                 foreach (CartItem item in parentForm.cartItems)
                 {
@@ -62,15 +63,20 @@ namespace PcProsShop.UserControls
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            parentForm.cartItems.RemoveAt(cartItemList.Items.IndexOf(cartItemList.SelectedItems[0]));
+            parentForm.cartItems.RemoveAt(currentItemIndex);
             LoadItemsToList();
+
+            if (parentForm.cartItems.Count <= 0)
+            {
+                parentForm.cartNotificationIcon.Visible = false;
+            }
         }
 
         private void cartItemList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cartItemList.FocusedItem == null) return;
-            int i = cartItemList.FocusedItem.Index;
-            LoadSelectedItem(i);
+            currentItemIndex = cartItemList.FocusedItem.Index;
+            LoadSelectedItem(currentItemIndex);
         }
 
         private void LoadSelectedItem(int selectedIndex)
@@ -101,10 +107,7 @@ namespace PcProsShop.UserControls
         }
 
         private void rightArrow_Click(object sender, EventArgs e)
-        {
-            int i = cartItemList.FocusedItem.Index;
-
-            if (parentForm.cartItems[i].Cartitem.Amount > currentAmount)
+        {if (parentForm.cartItems[currentItemIndex].Cartitem.Amount > currentAmount)
             {
                 currentAmount++;
                 UpdateCurrentAmount();

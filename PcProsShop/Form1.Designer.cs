@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.closeButton = new PcProsShop.PrettyButton();
             this.header = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.nameFirstChar = new System.Windows.Forms.Label();
             this.adminButton = new System.Windows.Forms.Panel();
             this.shoppingCartButton = new System.Windows.Forms.Panel();
-            this.nameFirstChar = new System.Windows.Forms.Label();
             this.minimizeButton = new PcProsShop.PrettyButton();
             this.slogan = new System.Windows.Forms.Label();
             this.navbar = new System.Windows.Forms.Panel();
@@ -46,12 +47,13 @@
             this.gpuButton = new PcProsShop.PrettyButton();
             this.logo = new System.Windows.Forms.PictureBox();
             this.itemBackground = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.cartNotfIcon = new System.Windows.Forms.Panel();
             this.header.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.shoppingCartButton.SuspendLayout();
             this.navbar.SuspendLayout();
             this.pageCountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeButton
@@ -90,23 +92,15 @@
             this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
             this.header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.header_MouseUp);
             // 
-            // adminButton
+            // panel1
             // 
-            this.adminButton.BackgroundImage = global::PcProsShop.Properties.Resources.AdminIcon;
-            this.adminButton.Location = new System.Drawing.Point(528, 33);
-            this.adminButton.Name = "adminButton";
-            this.adminButton.Size = new System.Drawing.Size(50, 50);
-            this.adminButton.TabIndex = 7;
-            this.adminButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.adminButton_MouseDown);
-            // 
-            // shoppingCartButton
-            // 
-            this.shoppingCartButton.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartIcon;
-            this.shoppingCartButton.Location = new System.Drawing.Point(597, 33);
-            this.shoppingCartButton.Name = "shoppingCartButton";
-            this.shoppingCartButton.Size = new System.Drawing.Size(50, 50);
-            this.shoppingCartButton.TabIndex = 6;
-            this.shoppingCartButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shoppingCartButton_MouseDown);
+            this.panel1.BackgroundImage = global::PcProsShop.Properties.Resources.AccountIcon;
+            this.panel1.Controls.Add(this.nameFirstChar);
+            this.panel1.Location = new System.Drawing.Point(666, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(50, 50);
+            this.panel1.TabIndex = 7;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // nameFirstChar
             // 
@@ -120,6 +114,25 @@
             this.nameFirstChar.TabIndex = 5;
             this.nameFirstChar.Text = "J";
             this.nameFirstChar.Click += new System.EventHandler(this.nameFirstChar_Click);
+            // 
+            // adminButton
+            // 
+            this.adminButton.BackgroundImage = global::PcProsShop.Properties.Resources.AdminIcon;
+            this.adminButton.Location = new System.Drawing.Point(528, 33);
+            this.adminButton.Name = "adminButton";
+            this.adminButton.Size = new System.Drawing.Size(50, 50);
+            this.adminButton.TabIndex = 7;
+            this.adminButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.adminButton_MouseDown);
+            // 
+            // shoppingCartButton
+            // 
+            this.shoppingCartButton.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartIcon;
+            this.shoppingCartButton.Controls.Add(this.cartNotfIcon);
+            this.shoppingCartButton.Location = new System.Drawing.Point(597, 33);
+            this.shoppingCartButton.Name = "shoppingCartButton";
+            this.shoppingCartButton.Size = new System.Drawing.Size(50, 50);
+            this.shoppingCartButton.TabIndex = 6;
+            this.shoppingCartButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shoppingCartButton_MouseDown);
             // 
             // minimizeButton
             // 
@@ -307,15 +320,13 @@
             this.itemBackground.TabIndex = 3;
             this.itemBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.itemBackground_Paint);
             // 
-            // panel1
+            // cartNotfIcon
             // 
-            this.panel1.BackgroundImage = global::PcProsShop.Properties.Resources.AccountIcon;
-            this.panel1.Controls.Add(this.nameFirstChar);
-            this.panel1.Location = new System.Drawing.Point(666, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(50, 50);
-            this.panel1.TabIndex = 7;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.cartNotfIcon.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartNotfIcon;
+            this.cartNotfIcon.Location = new System.Drawing.Point(0, 35);
+            this.cartNotfIcon.Name = "cartNotfIcon";
+            this.cartNotfIcon.Size = new System.Drawing.Size(15, 15);
+            this.cartNotfIcon.TabIndex = 8;
             // 
             // Form1
             // 
@@ -332,12 +343,13 @@
             this.Text = "Form1";
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.shoppingCartButton.ResumeLayout(false);
             this.navbar.ResumeLayout(false);
             this.pageCountPanel.ResumeLayout(false);
             this.pageCountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -362,5 +374,6 @@
         private Panel shoppingCartButton;
         private Panel adminButton;
         private Panel panel1;
+        private Panel cartNotfIcon;
     }
 }
