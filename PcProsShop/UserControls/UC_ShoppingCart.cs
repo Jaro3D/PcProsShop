@@ -110,5 +110,19 @@ namespace PcProsShop.UserControls
                 UpdateCurrentAmount();
             }
         }
+
+        private void prettyButton1_Click(object sender, EventArgs e)
+        {
+            if (parentForm.loggedIn)
+            {
+                UC_Payment ucPayment = new UC_Payment(parentForm);
+                parentForm.AddUserControl(ucPayment);
+            }
+            else
+            {
+                UC_Login ucLogin = new UC_Login(parentForm);
+                parentForm.AddUserControl(ucLogin);
+            }
+        }
     }
 }

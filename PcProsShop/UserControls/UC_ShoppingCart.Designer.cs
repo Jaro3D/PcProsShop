@@ -234,6 +234,7 @@
             this.prettyButton1.Text = "Checkout";
             this.prettyButton1.TextColor = System.Drawing.Color.White;
             this.prettyButton1.UseVisualStyleBackColor = false;
+            this.prettyButton1.Click += new System.EventHandler(this.prettyButton1_Click);
             // 
             // UC_ShoppingCart
             // 
