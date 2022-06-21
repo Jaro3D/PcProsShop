@@ -35,11 +35,11 @@
             this.infoInput = new System.Windows.Forms.TextBox();
             this.pageCountPanel = new System.Windows.Forms.Panel();
             this.itemAmountLabel = new System.Windows.Forms.Label();
-            this.itemName = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.updateButton = new PcProsShop.PrettyButton();
             this.rightArrow = new PcProsShop.PrettyButton();
             this.leftArrow = new PcProsShop.PrettyButton();
-            this.cartItemList = new System.Windows.Forms.ListView();
+            this.inventoryListView = new System.Windows.Forms.ListView();
             this.nameColumn = new System.Windows.Forms.ColumnHeader();
             this.priceColumt = new System.Windows.Forms.ColumnHeader();
             this.amountColumn = new System.Windows.Forms.ColumnHeader();
@@ -54,7 +54,7 @@
             this.editPanel.Controls.Add(this.infoLabel);
             this.editPanel.Controls.Add(this.infoInput);
             this.editPanel.Controls.Add(this.pageCountPanel);
-            this.editPanel.Controls.Add(this.itemName);
+            this.editPanel.Controls.Add(this.nameLabel);
             this.editPanel.Controls.Add(this.updateButton);
             this.editPanel.Controls.Add(this.rightArrow);
             this.editPanel.Controls.Add(this.leftArrow);
@@ -93,17 +93,17 @@
             // 
             // infoInput
             // 
-            this.infoInput.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.infoInput.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.infoInput.Location = new System.Drawing.Point(26, 214);
             this.infoInput.Name = "infoInput";
-            this.infoInput.Size = new System.Drawing.Size(291, 48);
+            this.infoInput.Size = new System.Drawing.Size(291, 31);
             this.infoInput.TabIndex = 14;
             // 
             // pageCountPanel
             // 
             this.pageCountPanel.BackgroundImage = global::PcProsShop.Properties.Resources.PageCountBackground;
             this.pageCountPanel.Controls.Add(this.itemAmountLabel);
-            this.pageCountPanel.Location = new System.Drawing.Point(74, 285);
+            this.pageCountPanel.Location = new System.Drawing.Point(74, 272);
             this.pageCountPanel.Name = "pageCountPanel";
             this.pageCountPanel.Size = new System.Drawing.Size(60, 40);
             this.pageCountPanel.TabIndex = 11;
@@ -118,16 +118,17 @@
             this.itemAmountLabel.Size = new System.Drawing.Size(22, 34);
             this.itemAmountLabel.TabIndex = 0;
             this.itemAmountLabel.Text = "1";
+            this.itemAmountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // itemName
+            // nameLabel
             // 
-            this.itemName.AutoSize = true;
-            this.itemName.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.itemName.Location = new System.Drawing.Point(19, 5);
-            this.itemName.Name = "itemName";
-            this.itemName.Size = new System.Drawing.Size(102, 48);
-            this.itemName.TabIndex = 1;
-            this.itemName.Text = "Name";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameLabel.Location = new System.Drawing.Point(19, 5);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(102, 48);
+            this.nameLabel.TabIndex = 1;
+            this.nameLabel.Text = "Name";
             // 
             // updateButton
             // 
@@ -140,7 +141,7 @@
             this.updateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.updateButton.ForeColor = System.Drawing.Color.White;
-            this.updateButton.Location = new System.Drawing.Point(26, 366);
+            this.updateButton.Location = new System.Drawing.Point(26, 353);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(100, 40);
             this.updateButton.TabIndex = 13;
@@ -159,7 +160,7 @@
             this.rightArrow.FlatAppearance.BorderSize = 0;
             this.rightArrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rightArrow.ForeColor = System.Drawing.Color.White;
-            this.rightArrow.Location = new System.Drawing.Point(142, 285);
+            this.rightArrow.Location = new System.Drawing.Point(142, 272);
             this.rightArrow.Name = "rightArrow";
             this.rightArrow.Size = new System.Drawing.Size(40, 40);
             this.rightArrow.TabIndex = 12;
@@ -177,31 +178,31 @@
             this.leftArrow.FlatAppearance.BorderSize = 0;
             this.leftArrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.leftArrow.ForeColor = System.Drawing.Color.White;
-            this.leftArrow.Location = new System.Drawing.Point(26, 285);
+            this.leftArrow.Location = new System.Drawing.Point(26, 272);
             this.leftArrow.Name = "leftArrow";
             this.leftArrow.Size = new System.Drawing.Size(40, 40);
             this.leftArrow.TabIndex = 10;
             this.leftArrow.TextColor = System.Drawing.Color.White;
             this.leftArrow.UseVisualStyleBackColor = false;
             // 
-            // cartItemList
+            // inventoryListView
             // 
-            this.cartItemList.AutoArrange = false;
-            this.cartItemList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cartItemList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.inventoryListView.AutoArrange = false;
+            this.inventoryListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inventoryListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nameColumn,
             this.priceColumt,
             this.amountColumn});
-            this.cartItemList.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cartItemList.ForeColor = System.Drawing.Color.Black;
-            this.cartItemList.FullRowSelect = true;
-            this.cartItemList.Location = new System.Drawing.Point(15, 15);
-            this.cartItemList.MultiSelect = false;
-            this.cartItemList.Name = "cartItemList";
-            this.cartItemList.Size = new System.Drawing.Size(395, 565);
-            this.cartItemList.TabIndex = 16;
-            this.cartItemList.UseCompatibleStateImageBehavior = false;
-            this.cartItemList.View = System.Windows.Forms.View.Details;
+            this.inventoryListView.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.inventoryListView.ForeColor = System.Drawing.Color.Black;
+            this.inventoryListView.FullRowSelect = true;
+            this.inventoryListView.Location = new System.Drawing.Point(15, 15);
+            this.inventoryListView.MultiSelect = false;
+            this.inventoryListView.Name = "inventoryListView";
+            this.inventoryListView.Size = new System.Drawing.Size(395, 565);
+            this.inventoryListView.TabIndex = 16;
+            this.inventoryListView.UseCompatibleStateImageBehavior = false;
+            this.inventoryListView.View = System.Windows.Forms.View.Details;
             // 
             // nameColumn
             // 
@@ -224,7 +225,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.editPanel);
-            this.Controls.Add(this.cartItemList);
+            this.Controls.Add(this.inventoryListView);
             this.Name = "UC_Admin";
             this.Size = new System.Drawing.Size(795, 595);
             this.Load += new System.EventHandler(this.UC_Admin_Load);
@@ -241,11 +242,11 @@
         private Panel editPanel;
         private Panel pageCountPanel;
         private Label itemAmountLabel;
-        private Label itemName;
+        private Label nameLabel;
         private PrettyButton updateButton;
         private PrettyButton rightArrow;
         private PrettyButton leftArrow;
-        private ListView cartItemList;
+        private ListView inventoryListView;
         private ColumnHeader nameColumn;
         private ColumnHeader priceColumt;
         private ColumnHeader amountColumn;
