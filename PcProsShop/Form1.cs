@@ -338,5 +338,19 @@ namespace PcProsShop
             tabIndex = 6;
             SwitchTab();
         }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (loggedIn) 
+            { 
+                tabIndex = 4; 
+            } 
+            else 
+            { 
+                tabIndex = 5; 
+            }
+
+            SwitchTab();
+        }
     }
 }

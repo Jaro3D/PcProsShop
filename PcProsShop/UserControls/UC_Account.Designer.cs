@@ -48,6 +48,7 @@
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.firstNameInput = new System.Windows.Forms.TextBox();
             this.firstNameLabel = new System.Windows.Forms.Label();
+            this.logOutButton = new PcProsShop.PrettyButton();
             this.panel1.SuspendLayout();
             this.editPanel.SuspendLayout();
             this.SuspendLayout();
@@ -277,11 +278,32 @@
             this.firstNameLabel.TabIndex = 34;
             this.firstNameLabel.Text = "First name";
             // 
+            // logOutButton
+            // 
+            this.logOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.logOutButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.logOutButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.logOutButton.BorderRadius = 8;
+            this.logOutButton.BorderSize = 0;
+            this.logOutButton.FlatAppearance.BorderSize = 0;
+            this.logOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logOutButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.logOutButton.ForeColor = System.Drawing.Color.White;
+            this.logOutButton.Location = new System.Drawing.Point(624, 508);
+            this.logOutButton.Name = "logOutButton";
+            this.logOutButton.Size = new System.Drawing.Size(120, 40);
+            this.logOutButton.TabIndex = 10;
+            this.logOutButton.Text = "Log Out";
+            this.logOutButton.TextColor = System.Drawing.Color.White;
+            this.logOutButton.UseVisualStyleBackColor = false;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            // 
             // UC_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.editPanel);
             this.Controls.Add(this.saveAccountButton);
             this.Controls.Add(this.editAccountButton);
@@ -325,5 +347,6 @@
         private Label lastNameLabel;
         private TextBox firstNameInput;
         private Label firstNameLabel;
+        private PrettyButton logOutButton;
     }
 }

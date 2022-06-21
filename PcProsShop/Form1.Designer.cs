@@ -34,7 +34,6 @@
             this.adminButton = new System.Windows.Forms.Panel();
             this.shoppingCartButton = new System.Windows.Forms.Panel();
             this.nameFirstChar = new System.Windows.Forms.Label();
-            this.accountButton = new PcProsShop.PrettyButton();
             this.minimizeButton = new PcProsShop.PrettyButton();
             this.slogan = new System.Windows.Forms.Label();
             this.navbar = new System.Windows.Forms.Panel();
@@ -47,10 +46,12 @@
             this.gpuButton = new PcProsShop.PrettyButton();
             this.logo = new System.Windows.Forms.PictureBox();
             this.itemBackground = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.header.SuspendLayout();
             this.navbar.SuspendLayout();
             this.pageCountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeButton
@@ -75,10 +76,9 @@
             // 
             this.header.BackColor = System.Drawing.Color.White;
             this.header.BackgroundImage = global::PcProsShop.Properties.Resources.HeaderBackground;
+            this.header.Controls.Add(this.panel1);
             this.header.Controls.Add(this.adminButton);
             this.header.Controls.Add(this.shoppingCartButton);
-            this.header.Controls.Add(this.nameFirstChar);
-            this.header.Controls.Add(this.accountButton);
             this.header.Controls.Add(this.minimizeButton);
             this.header.Controls.Add(this.slogan);
             this.header.Controls.Add(this.closeButton);
@@ -114,31 +114,12 @@
             this.nameFirstChar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
             this.nameFirstChar.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameFirstChar.ForeColor = System.Drawing.Color.White;
-            this.nameFirstChar.Location = new System.Drawing.Point(675, 42);
+            this.nameFirstChar.Location = new System.Drawing.Point(12, 9);
             this.nameFirstChar.Name = "nameFirstChar";
             this.nameFirstChar.Size = new System.Drawing.Size(25, 34);
             this.nameFirstChar.TabIndex = 5;
             this.nameFirstChar.Text = "J";
             this.nameFirstChar.Click += new System.EventHandler(this.nameFirstChar_Click);
-            // 
-            // accountButton
-            // 
-            this.accountButton.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.accountButton.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.accountButton.BackgroundImage = global::PcProsShop.Properties.Resources.AccountIcon;
-            this.accountButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.accountButton.BorderRadius = 25;
-            this.accountButton.BorderSize = 0;
-            this.accountButton.FlatAppearance.BorderSize = 0;
-            this.accountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.accountButton.ForeColor = System.Drawing.Color.White;
-            this.accountButton.Location = new System.Drawing.Point(662, 33);
-            this.accountButton.Name = "accountButton";
-            this.accountButton.Size = new System.Drawing.Size(50, 50);
-            this.accountButton.TabIndex = 3;
-            this.accountButton.TextColor = System.Drawing.Color.White;
-            this.accountButton.UseVisualStyleBackColor = false;
-            this.accountButton.Click += new System.EventHandler(this.accountButton_Click);
             // 
             // minimizeButton
             // 
@@ -326,6 +307,16 @@
             this.itemBackground.TabIndex = 3;
             this.itemBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.itemBackground_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::PcProsShop.Properties.Resources.AccountIcon;
+            this.panel1.Controls.Add(this.nameFirstChar);
+            this.panel1.Location = new System.Drawing.Point(666, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(50, 50);
+            this.panel1.TabIndex = 7;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -345,6 +336,8 @@
             this.pageCountPanel.ResumeLayout(false);
             this.pageCountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -361,7 +354,6 @@
         private PrettyButton gpuButton;
         private PrettyButton cpuButton;
         private PrettyButton ramButton;
-        private PrettyButton accountButton;
         private Panel pageCountPanel;
         private PrettyButton leftArrow;
         private PrettyButton rightArrow;
@@ -369,5 +361,6 @@
         private Label nameFirstChar;
         private Panel shoppingCartButton;
         private Panel adminButton;
+        private Panel panel1;
     }
 }

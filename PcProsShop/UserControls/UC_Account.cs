@@ -131,5 +131,14 @@ namespace PcProsShop.UserControls
                 MessageBox.Show("No data has been changed");
             }
         }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            parentForm.account = null;
+            parentForm.accChar.Visible = false;
+            parentForm.loggedIn = false;
+            parentForm.tabIndex = 0;
+            parentForm.SwitchTab();
+        }
     }
 }
