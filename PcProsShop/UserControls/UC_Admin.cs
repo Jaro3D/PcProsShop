@@ -15,6 +15,7 @@ namespace PcProsShop.UserControls
         private Item[] inventory;
         private Item currentItem;
         private int currentAmount;
+        private int currentItemIndex = 0;
 
         public UC_Admin()
         {
@@ -37,7 +38,7 @@ namespace PcProsShop.UserControls
             if (invLength > 0)
             {
                 inventoryListView.Items.Clear();
-                LoadSelectedItem(0);
+                LoadSelectedItem(currentItemIndex);
 
                 for (int i = 0; i < invLength; i++)
                 {
@@ -64,8 +65,8 @@ namespace PcProsShop.UserControls
         private void inventoryListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (inventoryListView.FocusedItem == null) return;
-            int i = inventoryListView.FocusedItem.Index;
-            LoadSelectedItem(i);
+            currentItemIndex = inventoryListView.FocusedItem.Index;
+            LoadSelectedItem(currentItemIndex);
         }
 
         private void UpdateCurrentAmount()
@@ -115,7 +116,8 @@ namespace PcProsShop.UserControls
 
             if (anythingChanged)
             {
-
+                Database.UpdateItem(currentItem);
+                LoadItemsToList();
             }
             else
             {

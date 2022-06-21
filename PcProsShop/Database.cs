@@ -106,6 +106,28 @@ namespace PcProsShop
             }
         }
 
+        public static void UpdateItem(Item item)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"UPDATE Item 
+                                            SET info = @info, amount = @amount, price = @price
+                                            WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@info", item.Info);
+                    command.Parameters.AddWithValue("@amount", item.Amount);
+                    command.Parameters.AddWithValue("@price", item.Price);
+                    command.Parameters.AddWithValue("@id", item.ItemID);
+
+                    command.ExecuteNonQuery();
+
+                }
+            }
+        }
+
         public static void CreateAccount(Account account)
         {
             //Encryption
