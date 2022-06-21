@@ -49,6 +49,7 @@
             this.firstNameInput = new System.Windows.Forms.TextBox();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.logOutButton = new PcProsShop.PrettyButton();
+            this.orderButton = new PcProsShop.PrettyButton();
             this.panel1.SuspendLayout();
             this.editPanel.SuspendLayout();
             this.SuspendLayout();
@@ -298,11 +299,32 @@
             this.logOutButton.UseVisualStyleBackColor = false;
             this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
+            // orderButton
+            // 
+            this.orderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.orderButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
+            this.orderButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.orderButton.BorderRadius = 8;
+            this.orderButton.BorderSize = 0;
+            this.orderButton.FlatAppearance.BorderSize = 0;
+            this.orderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.orderButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.orderButton.ForeColor = System.Drawing.Color.White;
+            this.orderButton.Location = new System.Drawing.Point(624, 447);
+            this.orderButton.Name = "orderButton";
+            this.orderButton.Size = new System.Drawing.Size(120, 40);
+            this.orderButton.TabIndex = 11;
+            this.orderButton.Text = "Orders";
+            this.orderButton.TextColor = System.Drawing.Color.White;
+            this.orderButton.UseVisualStyleBackColor = false;
+            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
+            // 
             // UC_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.orderButton);
             this.Controls.Add(this.logOutButton);
             this.Controls.Add(this.editPanel);
             this.Controls.Add(this.saveAccountButton);
@@ -348,5 +370,6 @@
         private TextBox firstNameInput;
         private Label firstNameLabel;
         private PrettyButton logOutButton;
+        private PrettyButton orderButton;
     }
 }

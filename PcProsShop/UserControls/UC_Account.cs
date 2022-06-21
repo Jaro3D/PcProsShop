@@ -140,5 +140,11 @@ namespace PcProsShop.UserControls
             parentForm.tabIndex = 0;
             parentForm.SwitchTab();
         }
+
+        private void orderButton_Click(object sender, EventArgs e)
+        {
+            UC_Order ucOrder = new UC_Order();
+            parentForm.AddUserControl(ucOrder);
+        }
     }
 }
