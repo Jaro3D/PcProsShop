@@ -13,6 +13,7 @@ namespace PcProsShop.UserControls
     public partial class UC_Admin : UserControl
     {
         private Item[] inventory;
+        private Item currentItem;
         private int currentAmount;
 
         public UC_Admin()
@@ -56,6 +57,70 @@ namespace PcProsShop.UserControls
             infoInput.Text = inventory[itemIndex].Info.ToString();
             currentAmount = inventory[itemIndex].Amount;
             itemAmountLabel.Text = currentAmount.ToString();
+
+            currentItem = inventory[itemIndex];
+        }
+
+        private void inventoryListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (inventoryListView.FocusedItem == null) return;
+            int i = inventoryListView.FocusedItem.Index;
+            LoadSelectedItem(i);
+        }
+
+        private void UpdateCurrentAmount()
+        {
+            itemAmountLabel.Text = currentAmount.ToString();
+        }
+
+        private void leftArrow_Click(object sender, EventArgs e)
+        {
+            if (currentAmount > 0)
+            {
+                currentAmount--;
+                UpdateCurrentAmount();
+            }
+        }
+
+        private void rightArrow_Click(object sender, EventArgs e)
+        {
+            if (currentAmount < 100)
+            {
+                currentAmount++;
+                UpdateCurrentAmount();
+            }
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            bool anythingChanged = false;
+
+            if (currentItem.Price != Convert.ToDouble(priceInput.Text))
+            {
+                anythingChanged = true;
+                currentItem.Price = Convert.ToDouble(priceInput.Text);
+            }
+
+            if (currentItem.Info != infoInput.Text)
+            {
+                anythingChanged = true;
+                currentItem.Info = infoInput.Text;
+            }
+
+            if (currentItem.Amount != Convert.ToInt32(itemAmountLabel.Text))
+            {
+                anythingChanged = true;
+                currentItem.Amount = Convert.ToInt32(itemAmountLabel.Text);
+            }
+
+            if (anythingChanged)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Nothing was changed");
+            }
         }
     }
 }

@@ -148,6 +148,7 @@
             this.updateButton.Text = "Update";
             this.updateButton.TextColor = System.Drawing.Color.White;
             this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // rightArrow
             // 
@@ -166,6 +167,7 @@
             this.rightArrow.TabIndex = 12;
             this.rightArrow.TextColor = System.Drawing.Color.White;
             this.rightArrow.UseVisualStyleBackColor = false;
+            this.rightArrow.Click += new System.EventHandler(this.rightArrow_Click);
             // 
             // leftArrow
             // 
@@ -184,6 +186,7 @@
             this.leftArrow.TabIndex = 10;
             this.leftArrow.TextColor = System.Drawing.Color.White;
             this.leftArrow.UseVisualStyleBackColor = false;
+            this.leftArrow.Click += new System.EventHandler(this.leftArrow_Click);
             // 
             // inventoryListView
             // 
@@ -203,6 +206,7 @@
             this.inventoryListView.TabIndex = 16;
             this.inventoryListView.UseCompatibleStateImageBehavior = false;
             this.inventoryListView.View = System.Windows.Forms.View.Details;
+            this.inventoryListView.SelectedIndexChanged += new System.EventHandler(this.inventoryListView_SelectedIndexChanged);
             // 
             // nameColumn
             // 
