@@ -280,9 +280,9 @@ namespace PcProsShop
                     command.CommandText = @"INSERT INTO Orders (accountId, itemId, amount, status) VALUES(@accountId, @itemId, @amount, @status)";
 
                     command.Parameters.AddWithValue("@accountId", order.CustomerID);
-                    command.Parameters.AddWithValue("@itemId", order.car);
-                    command.Parameters.AddWithValue("@amount", account.Mail);
-                    command.Parameters.AddWithValue("@status", account.Password);
+                    command.Parameters.AddWithValue("@itemId", order.OrderItem.Cartitem.ItemID);
+                    command.Parameters.AddWithValue("@amount", order.OrderItem.Amount);
+                    command.Parameters.AddWithValue("@status", order.Status);
 
                     command.ExecuteNonQuery();
 

@@ -19,7 +19,7 @@ namespace PcProsShop
         Delivered
     }
 
-    internal class Order
+    public class Order
     {
         /*
          * Attrebutes

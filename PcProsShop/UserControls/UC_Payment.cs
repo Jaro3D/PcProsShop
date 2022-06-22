@@ -56,7 +56,18 @@ namespace PcProsShop.UserControls
 
         private void confiormButton_Click(object sender, EventArgs e)
         {
-
+            if (paymentMethodsBox.Text != "")
+            {
+                foreach (var item in parentForm.cartItems)
+                {
+                    Order tempOrder = new Order(1, item, parentForm.account.Id, Status.InProcess);
+                    Database.CreateOrder(tempOrder);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a payment method");
+            }
         }
     }
 }

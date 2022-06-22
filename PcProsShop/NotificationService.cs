@@ -107,25 +107,22 @@ namespace PcProsShop
                 + "<br> The details of your order are:</p>"
                 + "<table border = 1  cellpadding= 0 cellspacing= 0 width = 500 > "
                 + "<tr><th><b>Article</b></th><th><b>Quantity</b></th><th><b>Price per item</b></th><th><b>Total price</b></th></tr>";
-            
-            for(int i = 0; i < newOrder.OrderItem.Length; i++)
-            {
-                double singlePrice = newOrder.OrderItem[i].Cartitem.Price;
-                double totalPrice = newOrder.OrderItem[i].Cartitem.Price * newOrder.OrderItem[i].Amount;
-                
-                
 
-                text += "<tr> <td>" + newOrder.OrderItem[i].Cartitem.Name 
-                    + "</td> <td align=center>" + newOrder.OrderItem[i].Amount
-                    + "</td> <td align=right>" + formatPrice(singlePrice) + " €"
-                    + "</td> <td align=right>" + formatPrice(totalPrice) + " €</td> </tr>";
+            double singlePrice = newOrder.OrderItem.Cartitem.Price;
+            double totalPrice = newOrder.OrderItem.Cartitem.Price * newOrder.OrderItem.Amount;
 
-                text += "</table><p><b>Total price: " + newOrder.OrderItem[i].Cartitem.Price + " €<br></b></p>"
-                    + "<p><br>Your ordered items will arrive shortly.<br><br></p>"
-                    + "<p>Thank you for buying at PC Pros</p>"
-                    + "<p>We'll be happy to hear from you again</p>"
-                    + "<p>Your PC Pros Team<br><br><br></p> </body></html>";
-            }
+
+
+            text += "<tr> <td>" + newOrder.OrderItem.Cartitem.Name
+                + "</td> <td align=center>" + newOrder.OrderItem.Amount
+                + "</td> <td align=right>" + formatPrice(singlePrice) + " €"
+                + "</td> <td align=right>" + formatPrice(totalPrice) + " €</td> </tr>";
+
+            text += "</table><p><b>Total price: " + newOrder.OrderItem.Cartitem.Price + " €<br></b></p>"
+                + "<p><br>Your ordered items will arrive shortly.<br><br></p>"
+                + "<p>Thank you for buying at PC Pros</p>"
+                + "<p>We'll be happy to hear from you again</p>"
+                + "<p>Your PC Pros Team<br><br><br></p> </body></html>";
 
             //Console.WriteLine(text);
             sendMail(userAccount.Mail, subject, text);

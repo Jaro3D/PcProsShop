@@ -37,7 +37,7 @@
             this.emailLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.paymentMethodsBox = new System.Windows.Forms.ComboBox();
-            this.confiormButton = new PcProsShop.PrettyButton();
+            this.confirmButton = new PcProsShop.PrettyButton();
             this.payMethodLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -142,25 +142,25 @@
             this.paymentMethodsBox.Size = new System.Drawing.Size(194, 45);
             this.paymentMethodsBox.TabIndex = 12;
             // 
-            // confiormButton
+            // confirmButton
             // 
-            this.confiormButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
-            this.confiormButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
-            this.confiormButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.confiormButton.BorderRadius = 5;
-            this.confiormButton.BorderSize = 0;
-            this.confiormButton.FlatAppearance.BorderSize = 0;
-            this.confiormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confiormButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.confiormButton.ForeColor = System.Drawing.Color.White;
-            this.confiormButton.Location = new System.Drawing.Point(52, 506);
-            this.confiormButton.Name = "confiormButton";
-            this.confiormButton.Size = new System.Drawing.Size(180, 40);
-            this.confiormButton.TabIndex = 16;
-            this.confiormButton.Text = "Confirm";
-            this.confiormButton.TextColor = System.Drawing.Color.White;
-            this.confiormButton.UseVisualStyleBackColor = false;
-            this.confiormButton.Click += new System.EventHandler(this.confiormButton_Click);
+            this.confirmButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.confirmButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.confirmButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.confirmButton.BorderRadius = 5;
+            this.confirmButton.BorderSize = 0;
+            this.confirmButton.FlatAppearance.BorderSize = 0;
+            this.confirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirmButton.ForeColor = System.Drawing.Color.White;
+            this.confirmButton.Location = new System.Drawing.Point(52, 506);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(180, 40);
+            this.confirmButton.TabIndex = 16;
+            this.confirmButton.Text = "Confirm";
+            this.confirmButton.TextColor = System.Drawing.Color.White;
+            this.confirmButton.UseVisualStyleBackColor = false;
+            this.confirmButton.Click += new System.EventHandler(this.confiormButton_Click);
             // 
             // payMethodLabel
             // 
@@ -178,7 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.payMethodLabel);
-            this.Controls.Add(this.confiormButton);
+            this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.paymentMethodsBox);
             this.Controls.Add(this.zipCodeLabel);
             this.Controls.Add(this.cityLabel);
@@ -207,7 +207,7 @@
         private Label emailLabel;
         private Label nameLabel;
         private ComboBox paymentMethodsBox;
-        private PrettyButton confiormButton;
+        private PrettyButton confirmButton;
         private Label payMethodLabel;
     }
 }
