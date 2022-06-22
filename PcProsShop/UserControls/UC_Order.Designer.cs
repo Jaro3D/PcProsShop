@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.editPanel = new System.Windows.Forms.Panel();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.preStatusLabel = new System.Windows.Forms.Label();
             this.cancelButton = new PcProsShop.PrettyButton();
-            this.orderName = new System.Windows.Forms.Label();
+            this.orderNameLabel = new System.Windows.Forms.Label();
             this.orderPrice = new System.Windows.Forms.Label();
-            this.cartItemList = new System.Windows.Forms.ListView();
+            this.orderViewList = new System.Windows.Forms.ListView();
             this.nameColumn = new System.Windows.Forms.ColumnHeader();
             this.priceColumt = new System.Windows.Forms.ColumnHeader();
             this.amountColumn = new System.Windows.Forms.ColumnHeader();
-            this.preStatusLabel = new System.Windows.Forms.Label();
-            this.statusLabel = new System.Windows.Forms.Label();
             this.editPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,12 +46,33 @@
             this.editPanel.Controls.Add(this.statusLabel);
             this.editPanel.Controls.Add(this.preStatusLabel);
             this.editPanel.Controls.Add(this.cancelButton);
-            this.editPanel.Controls.Add(this.orderName);
+            this.editPanel.Controls.Add(this.orderNameLabel);
             this.editPanel.Controls.Add(this.orderPrice);
             this.editPanel.Location = new System.Drawing.Point(446, 47);
             this.editPanel.Name = "editPanel";
             this.editPanel.Size = new System.Drawing.Size(283, 521);
             this.editPanel.TabIndex = 17;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Poppins SemiBold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(150)))), ((int)(((byte)(65)))));
+            this.statusLabel.Location = new System.Drawing.Point(126, 53);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(107, 48);
+            this.statusLabel.TabIndex = 16;
+            this.statusLabel.Text = "Status";
+            // 
+            // preStatusLabel
+            // 
+            this.preStatusLabel.AutoSize = true;
+            this.preStatusLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.preStatusLabel.Location = new System.Drawing.Point(18, 53);
+            this.preStatusLabel.Name = "preStatusLabel";
+            this.preStatusLabel.Size = new System.Drawing.Size(111, 48);
+            this.preStatusLabel.TabIndex = 15;
+            this.preStatusLabel.Text = "Status:";
             // 
             // cancelButton
             // 
@@ -72,15 +93,15 @@
             this.cancelButton.TextColor = System.Drawing.Color.White;
             this.cancelButton.UseVisualStyleBackColor = false;
             // 
-            // orderName
+            // orderNameLabel
             // 
-            this.orderName.AutoSize = true;
-            this.orderName.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.orderName.Location = new System.Drawing.Point(18, 5);
-            this.orderName.Name = "orderName";
-            this.orderName.Size = new System.Drawing.Size(102, 48);
-            this.orderName.TabIndex = 1;
-            this.orderName.Text = "Name";
+            this.orderNameLabel.AutoSize = true;
+            this.orderNameLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.orderNameLabel.Location = new System.Drawing.Point(18, 5);
+            this.orderNameLabel.Name = "orderNameLabel";
+            this.orderNameLabel.Size = new System.Drawing.Size(102, 48);
+            this.orderNameLabel.TabIndex = 1;
+            this.orderNameLabel.Text = "Name";
             // 
             // orderPrice
             // 
@@ -93,24 +114,24 @@
             this.orderPrice.TabIndex = 2;
             this.orderPrice.Text = "100€";
             // 
-            // cartItemList
+            // orderViewList
             // 
-            this.cartItemList.AutoArrange = false;
-            this.cartItemList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cartItemList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.orderViewList.AutoArrange = false;
+            this.orderViewList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.orderViewList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.nameColumn,
             this.priceColumt,
             this.amountColumn});
-            this.cartItemList.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cartItemList.ForeColor = System.Drawing.Color.Black;
-            this.cartItemList.FullRowSelect = true;
-            this.cartItemList.Location = new System.Drawing.Point(15, 15);
-            this.cartItemList.MultiSelect = false;
-            this.cartItemList.Name = "cartItemList";
-            this.cartItemList.Size = new System.Drawing.Size(395, 565);
-            this.cartItemList.TabIndex = 16;
-            this.cartItemList.UseCompatibleStateImageBehavior = false;
-            this.cartItemList.View = System.Windows.Forms.View.Details;
+            this.orderViewList.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.orderViewList.ForeColor = System.Drawing.Color.Black;
+            this.orderViewList.FullRowSelect = true;
+            this.orderViewList.Location = new System.Drawing.Point(15, 15);
+            this.orderViewList.MultiSelect = false;
+            this.orderViewList.Name = "orderViewList";
+            this.orderViewList.Size = new System.Drawing.Size(395, 565);
+            this.orderViewList.TabIndex = 16;
+            this.orderViewList.UseCompatibleStateImageBehavior = false;
+            this.orderViewList.View = System.Windows.Forms.View.Details;
             // 
             // nameColumn
             // 
@@ -127,33 +148,13 @@
             this.amountColumn.Text = "Amount";
             this.amountColumn.Width = 90;
             // 
-            // preStatusLabel
-            // 
-            this.preStatusLabel.AutoSize = true;
-            this.preStatusLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.preStatusLabel.Location = new System.Drawing.Point(18, 53);
-            this.preStatusLabel.Name = "preStatusLabel";
-            this.preStatusLabel.Size = new System.Drawing.Size(111, 48);
-            this.preStatusLabel.TabIndex = 15;
-            this.preStatusLabel.Text = "Status:";
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.statusLabel.Location = new System.Drawing.Point(126, 53);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(105, 48);
-            this.statusLabel.TabIndex = 16;
-            this.statusLabel.Text = "Status";
-            // 
             // UC_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.editPanel);
-            this.Controls.Add(this.cartItemList);
+            this.Controls.Add(this.orderViewList);
             this.Name = "UC_Order";
             this.Size = new System.Drawing.Size(795, 595);
             this.Load += new System.EventHandler(this.UC_Order_Load);
@@ -169,9 +170,9 @@
         private Label statusLabel;
         private Label preStatusLabel;
         private PrettyButton cancelButton;
-        private Label orderName;
+        private Label orderNameLabel;
         private Label orderPrice;
-        private ListView cartItemList;
+        private ListView orderViewList;
         private ColumnHeader nameColumn;
         private ColumnHeader priceColumt;
         private ColumnHeader amountColumn;

@@ -56,6 +56,11 @@ namespace PcProsShop
         /*
          * Constructor
          */
+        public Order()
+        { 
+        
+        }
+
         public Order(int id, CartItem item, int customerID, Status status)
         {
             ID = id;
