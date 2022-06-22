@@ -12,8 +12,13 @@ namespace PcProsShop
      * OnTheWay: Order is shipping
      * Delivered: Order was deleiverd.
      */
-    public enum Status {New, OnTheWay, Delivered}
-    
+    public enum Status
+    {
+        InProcess,
+        InShipping,
+        Delivered
+    }
+
     internal class Order
     {
         /*
@@ -58,20 +63,5 @@ namespace PcProsShop
             CustomerID = customerID;
             Status = status;
         }
-
-        /*
-         * Calculates the total price of the Order.
-         * Return value: Double value containg the price of the Order.
-         */
-        public double calcTotalPrice()
-        {
-            double price = 0;
-            for(int i = 0;i< OrderItem.Length; i++)
-            {
-                price += OrderItem[i].Cartitem.Price * OrderItem[i].Amount;
-            }
-            return price;
-        }
-
     }
 }

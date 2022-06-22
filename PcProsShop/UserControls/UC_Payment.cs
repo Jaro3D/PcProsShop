@@ -38,7 +38,9 @@ namespace PcProsShop.UserControls
             foreach (var item in list)
             {
                 double tempAmount = item.Cartitem.Price * Convert.ToDouble(item.Amount);
+                MessageBox.Show(tempAmount.ToString());
                 totalAmount *= tempAmount;
+                MessageBox.Show(totalAmount.ToString());
             }
 
             return totalAmount;
