@@ -58,6 +58,7 @@ namespace PcProsShop.UserControls
                     parentForm.loggedIn = true;
                     parentForm.accChar.Visible = true;
                     parentForm.accChar.Text = accName.ToString();
+                    parentForm.accountIcon.BackgroundImage = Properties.Resources.AccountIconEmpty;
 
                     if (accs.IsAdmin == 1)
                     {

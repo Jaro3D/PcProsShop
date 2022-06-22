@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.closeButton = new PcProsShop.PrettyButton();
             this.header = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.accountIconButton = new System.Windows.Forms.Panel();
             this.nameFirstChar = new System.Windows.Forms.Label();
             this.adminButton = new System.Windows.Forms.Panel();
             this.shoppingCartButton = new System.Windows.Forms.Panel();
+            this.cartNotfIcon = new System.Windows.Forms.Panel();
             this.minimizeButton = new PcProsShop.PrettyButton();
             this.slogan = new System.Windows.Forms.Label();
             this.navbar = new System.Windows.Forms.Panel();
@@ -47,9 +48,8 @@
             this.gpuButton = new PcProsShop.PrettyButton();
             this.logo = new System.Windows.Forms.PictureBox();
             this.itemBackground = new System.Windows.Forms.Panel();
-            this.cartNotfIcon = new System.Windows.Forms.Panel();
             this.header.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.accountIconButton.SuspendLayout();
             this.shoppingCartButton.SuspendLayout();
             this.navbar.SuspendLayout();
             this.pageCountPanel.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             this.header.BackColor = System.Drawing.Color.White;
             this.header.BackgroundImage = global::PcProsShop.Properties.Resources.HeaderBackground;
-            this.header.Controls.Add(this.panel1);
+            this.header.Controls.Add(this.accountIconButton);
             this.header.Controls.Add(this.adminButton);
             this.header.Controls.Add(this.shoppingCartButton);
             this.header.Controls.Add(this.minimizeButton);
@@ -92,15 +92,15 @@
             this.header.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_MouseMove);
             this.header.MouseUp += new System.Windows.Forms.MouseEventHandler(this.header_MouseUp);
             // 
-            // panel1
+            // accountIconButton
             // 
-            this.panel1.BackgroundImage = global::PcProsShop.Properties.Resources.AccountIcon;
-            this.panel1.Controls.Add(this.nameFirstChar);
-            this.panel1.Location = new System.Drawing.Point(666, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(50, 50);
-            this.panel1.TabIndex = 7;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.accountIconButton.BackgroundImage = global::PcProsShop.Properties.Resources.AccountIcon;
+            this.accountIconButton.Controls.Add(this.nameFirstChar);
+            this.accountIconButton.Location = new System.Drawing.Point(666, 33);
+            this.accountIconButton.Name = "accountIconButton";
+            this.accountIconButton.Size = new System.Drawing.Size(50, 50);
+            this.accountIconButton.TabIndex = 7;
+            this.accountIconButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // nameFirstChar
             // 
@@ -133,6 +133,14 @@
             this.shoppingCartButton.Size = new System.Drawing.Size(50, 50);
             this.shoppingCartButton.TabIndex = 6;
             this.shoppingCartButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shoppingCartButton_MouseDown);
+            // 
+            // cartNotfIcon
+            // 
+            this.cartNotfIcon.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartNotfIcon;
+            this.cartNotfIcon.Location = new System.Drawing.Point(0, 35);
+            this.cartNotfIcon.Name = "cartNotfIcon";
+            this.cartNotfIcon.Size = new System.Drawing.Size(15, 15);
+            this.cartNotfIcon.TabIndex = 8;
             // 
             // minimizeButton
             // 
@@ -320,14 +328,6 @@
             this.itemBackground.TabIndex = 3;
             this.itemBackground.Paint += new System.Windows.Forms.PaintEventHandler(this.itemBackground_Paint);
             // 
-            // cartNotfIcon
-            // 
-            this.cartNotfIcon.BackgroundImage = global::PcProsShop.Properties.Resources.ShoppingCartNotfIcon;
-            this.cartNotfIcon.Location = new System.Drawing.Point(0, 35);
-            this.cartNotfIcon.Name = "cartNotfIcon";
-            this.cartNotfIcon.Size = new System.Drawing.Size(15, 15);
-            this.cartNotfIcon.TabIndex = 8;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -343,8 +343,8 @@
             this.Text = "Form1";
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.accountIconButton.ResumeLayout(false);
+            this.accountIconButton.PerformLayout();
             this.shoppingCartButton.ResumeLayout(false);
             this.navbar.ResumeLayout(false);
             this.pageCountPanel.ResumeLayout(false);
@@ -373,7 +373,7 @@
         private Label nameFirstChar;
         private Panel shoppingCartButton;
         private Panel adminButton;
-        private Panel panel1;
+        private Panel accountIconButton;
         private Panel cartNotfIcon;
     }
 }
