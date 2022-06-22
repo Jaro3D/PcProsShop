@@ -138,6 +138,7 @@ namespace PcProsShop.UserControls
             parentForm.accChar.Visible = false;
             parentForm.loggedIn = false;
             parentForm.tabIndex = 0;
+            parentForm.accountIcon.BackgroundImage = Properties.Resources.AccountIcon;
             parentForm.SwitchTab();
         }
 

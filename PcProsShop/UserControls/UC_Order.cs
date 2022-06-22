@@ -21,7 +21,6 @@ namespace PcProsShop.UserControls
         {
             InitializeComponent();
             parentForm = parent;
-            editPanel.Visible = false;
             LoadOrdersToList();
         }
 
@@ -35,11 +34,12 @@ namespace PcProsShop.UserControls
             int ordersLength = Database.LoadAllOrders(parentForm.account.Id).Length;
             orders = new Order[ordersLength];
             orders = Database.LoadAllOrders(parentForm.account.Id);
+            orderViewList.Items.Clear();
+            editPanel.Visible = false;
 
             if (ordersLength > 0)
             {
                 editPanel.Visible = true;
-                orderViewList.Items.Clear();
                 LoadSelectedOrder(currentOrderIndex);
 
                 for (int i = 0; i < ordersLength; i++)

@@ -124,8 +124,8 @@
   <data name="ItemBackgroundGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ItemBackgroundGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AccountIconEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AccountIconEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PC Pros Logo_Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PC Pros Logo_Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Item_Ryzen5-5600X" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_Ryzen5-5600X.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +172,9 @@
   <data name="HeaderBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HeaderBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="OrderCompleted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OrderCompleted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Item_RTX3060Ti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_RTX3060Ti1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,13 +196,10 @@
   <data name="Item_RTX3050" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_RTX30501.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PC Pros Logo_Transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PC Pros Logo_Transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Item_RX6800XT" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Item_RX6800XT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OrderCompleted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OrderCompleted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AccountIconEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AccountIconEmpty1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

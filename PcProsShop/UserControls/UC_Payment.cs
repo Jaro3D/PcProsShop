@@ -66,6 +66,9 @@ namespace PcProsShop.UserControls
                     UC_OrderCompleted ucOrderCompleted = new UC_OrderCompleted();
                     parentForm.AddUserControl(ucOrderCompleted);
                 }
+
+                parentForm.cartItems.Clear();
+                parentForm.cartNotificationIcon.Visible = false;
             }
             else
             {
