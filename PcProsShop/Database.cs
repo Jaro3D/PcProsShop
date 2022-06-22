@@ -270,5 +270,24 @@ namespace PcProsShop
                 }
             }
         }
+
+        public static void CreateOrder(Order order)
+        {using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"INSERT INTO Orders (accountId, itemId, amount, status) VALUES(@accountId, @itemId, @amount, @status)";
+
+                    command.Parameters.AddWithValue("@accountId", order.CustomerID);
+                    command.Parameters.AddWithValue("@itemId", order.car);
+                    command.Parameters.AddWithValue("@amount", account.Mail);
+                    command.Parameters.AddWithValue("@status", account.Password);
+
+                    command.ExecuteNonQuery();
+
+                }
+            }
+        }
     }
 }

@@ -160,6 +160,7 @@
             this.confiormButton.Text = "Confirm";
             this.confiormButton.TextColor = System.Drawing.Color.White;
             this.confiormButton.UseVisualStyleBackColor = false;
+            this.confiormButton.Click += new System.EventHandler(this.confiormButton_Click);
             // 
             // payMethodLabel
             // 

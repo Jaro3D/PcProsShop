@@ -25,7 +25,7 @@ namespace PcProsShop
          * Attrebutes
          */
         private int id;
-        private CartItem[] orderItem;
+        private CartItem item;
         private int customerID;
         private Status status;
         
@@ -37,10 +37,10 @@ namespace PcProsShop
             get { return id; }
             set { id = value; }
         }
-        public CartItem[] OrderItem
+        public CartItem OrderItem
         {
-            get { return orderItem; }
-            set { orderItem = value; }
+            get { return item; }
+            set { item = value; }
         }
         public int CustomerID
         {
@@ -56,7 +56,7 @@ namespace PcProsShop
         /*
          * Constructor
          */
-        public Order(int id, CartItem[] item, int customerID, Status status)
+        public Order(int id, CartItem item, int customerID, Status status)
         {
             ID = id;
             OrderItem = item;

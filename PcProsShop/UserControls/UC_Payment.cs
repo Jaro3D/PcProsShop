@@ -53,5 +53,10 @@ namespace PcProsShop.UserControls
         {
 
         }
+
+        private void confiormButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
