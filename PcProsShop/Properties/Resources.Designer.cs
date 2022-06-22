@@ -283,6 +283,16 @@ namespace PcProsShop.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OrderCompleted {
+            get {
+                object obj = ResourceManager.GetObject("OrderCompleted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PageCountBackground {
             get {
                 object obj = ResourceManager.GetObject("PageCountBackground", resourceCulture);

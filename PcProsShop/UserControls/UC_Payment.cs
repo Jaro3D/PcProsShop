@@ -62,6 +62,9 @@ namespace PcProsShop.UserControls
                 {
                     Order tempOrder = new Order(1, item, parentForm.account.Id, Status.InProcess);
                     Database.CreateOrder(tempOrder);
+
+                    UC_OrderCompleted ucOrderCompleted = new UC_OrderCompleted();
+                    parentForm.AddUserControl(ucOrderCompleted);
                 }
             }
             else
