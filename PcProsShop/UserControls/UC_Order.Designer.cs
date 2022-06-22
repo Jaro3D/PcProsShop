@@ -38,11 +38,13 @@
             this.nameColumn = new System.Windows.Forms.ColumnHeader();
             this.priceColumt = new System.Windows.Forms.ColumnHeader();
             this.amountColumn = new System.Windows.Forms.ColumnHeader();
+            this.updateStatusButton = new PcProsShop.PrettyButton();
             this.editPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // editPanel
             // 
+            this.editPanel.Controls.Add(this.updateStatusButton);
             this.editPanel.Controls.Add(this.statusLabel);
             this.editPanel.Controls.Add(this.preStatusLabel);
             this.editPanel.Controls.Add(this.cancelButton);
@@ -92,6 +94,7 @@
             this.cancelButton.Text = "Cancel";
             this.cancelButton.TextColor = System.Drawing.Color.White;
             this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // orderNameLabel
             // 
@@ -132,6 +135,7 @@
             this.orderViewList.TabIndex = 16;
             this.orderViewList.UseCompatibleStateImageBehavior = false;
             this.orderViewList.View = System.Windows.Forms.View.Details;
+            this.orderViewList.SelectedIndexChanged += new System.EventHandler(this.orderViewList_SelectedIndexChanged);
             // 
             // nameColumn
             // 
@@ -147,6 +151,24 @@
             // 
             this.amountColumn.Text = "Amount";
             this.amountColumn.Width = 90;
+            // 
+            // updateStatusButton
+            // 
+            this.updateStatusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.updateStatusButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.updateStatusButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.updateStatusButton.BorderRadius = 5;
+            this.updateStatusButton.BorderSize = 0;
+            this.updateStatusButton.FlatAppearance.BorderSize = 0;
+            this.updateStatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateStatusButton.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.updateStatusButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(189)))), ((int)(((byte)(196)))));
+            this.updateStatusButton.Location = new System.Drawing.Point(18, 466);
+            this.updateStatusButton.Name = "updateStatusButton";
+            this.updateStatusButton.Size = new System.Drawing.Size(170, 40);
+            this.updateStatusButton.TabIndex = 17;
+            this.updateStatusButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(189)))), ((int)(((byte)(196)))));
+            this.updateStatusButton.UseVisualStyleBackColor = false;
             // 
             // UC_Order
             // 
@@ -176,5 +198,6 @@
         private ColumnHeader nameColumn;
         private ColumnHeader priceColumt;
         private ColumnHeader amountColumn;
+        private PrettyButton updateStatusButton;
     }
 }

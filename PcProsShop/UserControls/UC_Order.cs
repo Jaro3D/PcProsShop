@@ -73,5 +73,24 @@ namespace PcProsShop.UserControls
 
             currentOrder = orders[orderIndex];
         }
+
+        private void orderViewList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (orderViewList.FocusedItem == null) return;
+            currentOrderIndex = orderViewList.FocusedItem.Index;
+            LoadSelectedOrder(currentOrderIndex);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            if (currentOrder.Status.Equals(Status.InProcess))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("The order can no longer be canceled because it is already in delivery.");
+            }
+        }
     }
 }
