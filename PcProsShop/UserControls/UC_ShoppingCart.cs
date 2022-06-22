@@ -56,8 +56,7 @@ namespace PcProsShop.UserControls
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            int i = cartItemList.FocusedItem.Index;
-            parentForm.cartItems[i].Amount = currentAmount;
+            parentForm.cartItems[currentItemIndex].Amount = currentAmount;
             LoadItemsToList();
         }
 
