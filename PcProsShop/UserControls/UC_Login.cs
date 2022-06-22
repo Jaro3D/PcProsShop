@@ -53,6 +53,7 @@ namespace PcProsShop.UserControls
                 try
                 {
                     Account accs = Database.LoadAccount(emailInput.Text.ToLower(), passwordInput.Text);
+                   
                     char accName = accs.Fname[0];
                     parentForm.account = accs;
                     parentForm.loggedIn = true;
@@ -66,11 +67,11 @@ namespace PcProsShop.UserControls
 
                     parentForm.tabIndex = 0;
                     parentForm.SwitchTab();
-
+                    
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Email or password incorrect");
+                    MessageBox.Show("Email or password incorrect\nPlease try again or sign up");
                 }
             }
             else
