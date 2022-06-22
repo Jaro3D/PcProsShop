@@ -21,7 +21,8 @@ namespace PcProsShop.UserControls
         {
             InitializeComponent();
             parentForm = parent;
-            LoadItemsToList();
+            editPanel.Visible = false;
+            LoadOrdersToList();
         }
 
         private void UC_Order_Load(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace PcProsShop.UserControls
 
         }
 
-        private void LoadItemsToList()
+        private void LoadOrdersToList()
         {
             int ordersLength = Database.LoadAllOrders(parentForm.account.Id).Length;
             orders = new Order[ordersLength];
@@ -37,6 +38,7 @@ namespace PcProsShop.UserControls
 
             if (ordersLength > 0)
             {
+                editPanel.Visible = true;
                 orderViewList.Items.Clear();
                 LoadSelectedOrder(currentOrderIndex);
 
@@ -86,11 +88,32 @@ namespace PcProsShop.UserControls
             if (currentOrder.Status.Equals(Status.InProcess))
             {
 
+                LoadOrdersToList();
             }
             else
             {
                 MessageBox.Show("The order can no longer be canceled because it is already in delivery.");
             }
+        }
+
+        private void updateStatusButton_Click(object sender, EventArgs e)
+        {
+            if (currentOrder.Status.Equals(Status.InProcess))
+            {
+                currentOrder.Status = Status.InShipping;
+            }
+            else if (currentOrder.Status.Equals(Status.InShipping))
+            {
+                currentOrder.Status = Status.Delivered;
+            }
+            else if (currentOrder.Status.Equals(Status.Delivered))
+            {
+                currentOrder.Status = Status.InProcess;
+            }
+
+            Database.UpdateOrderStatus(currentOrder);
+
+            LoadOrdersToList();
         }
     }
 }

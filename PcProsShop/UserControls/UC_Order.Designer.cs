@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.editPanel = new System.Windows.Forms.Panel();
+            this.updateStatusButton = new PcProsShop.PrettyButton();
             this.statusLabel = new System.Windows.Forms.Label();
             this.preStatusLabel = new System.Windows.Forms.Label();
             this.cancelButton = new PcProsShop.PrettyButton();
@@ -38,7 +39,6 @@
             this.nameColumn = new System.Windows.Forms.ColumnHeader();
             this.priceColumt = new System.Windows.Forms.ColumnHeader();
             this.amountColumn = new System.Windows.Forms.ColumnHeader();
-            this.updateStatusButton = new PcProsShop.PrettyButton();
             this.editPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +52,27 @@
             this.editPanel.Controls.Add(this.orderPrice);
             this.editPanel.Location = new System.Drawing.Point(446, 47);
             this.editPanel.Name = "editPanel";
-            this.editPanel.Size = new System.Drawing.Size(283, 521);
+            this.editPanel.Size = new System.Drawing.Size(346, 521);
             this.editPanel.TabIndex = 17;
+            // 
+            // updateStatusButton
+            // 
+            this.updateStatusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.updateStatusButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.updateStatusButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.updateStatusButton.BorderRadius = 5;
+            this.updateStatusButton.BorderSize = 0;
+            this.updateStatusButton.FlatAppearance.BorderSize = 0;
+            this.updateStatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateStatusButton.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.updateStatusButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(189)))), ((int)(((byte)(196)))));
+            this.updateStatusButton.Location = new System.Drawing.Point(18, 466);
+            this.updateStatusButton.Name = "updateStatusButton";
+            this.updateStatusButton.Size = new System.Drawing.Size(170, 40);
+            this.updateStatusButton.TabIndex = 17;
+            this.updateStatusButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(189)))), ((int)(((byte)(196)))));
+            this.updateStatusButton.UseVisualStyleBackColor = false;
+            this.updateStatusButton.Click += new System.EventHandler(this.updateStatusButton_Click);
             // 
             // statusLabel
             // 
@@ -151,24 +170,6 @@
             // 
             this.amountColumn.Text = "Amount";
             this.amountColumn.Width = 90;
-            // 
-            // updateStatusButton
-            // 
-            this.updateStatusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.updateStatusButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.updateStatusButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.updateStatusButton.BorderRadius = 5;
-            this.updateStatusButton.BorderSize = 0;
-            this.updateStatusButton.FlatAppearance.BorderSize = 0;
-            this.updateStatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateStatusButton.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updateStatusButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(189)))), ((int)(((byte)(196)))));
-            this.updateStatusButton.Location = new System.Drawing.Point(18, 466);
-            this.updateStatusButton.Name = "updateStatusButton";
-            this.updateStatusButton.Size = new System.Drawing.Size(170, 40);
-            this.updateStatusButton.TabIndex = 17;
-            this.updateStatusButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(189)))), ((int)(((byte)(196)))));
-            this.updateStatusButton.UseVisualStyleBackColor = false;
             // 
             // UC_Order
             // 

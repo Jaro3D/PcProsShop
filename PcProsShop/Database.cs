@@ -323,6 +323,23 @@ namespace PcProsShop
             }
         }
 
+        public static void UpdateOrderStatus(Order order)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"UPDATE Orders SET status = @status WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@status", order.Status);
+                    command.Parameters.AddWithValue("@id", order.ID);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public static Order[] LoadAllOrders(int accountId)
         {
             Order[] orders = new Order[20];
