@@ -36,8 +36,8 @@
             this.streetLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.prettyButton1 = new PcProsShop.PrettyButton();
+            this.paymentMethodsBox = new System.Windows.Forms.ComboBox();
+            this.confiormButton = new PcProsShop.PrettyButton();
             this.SuspendLayout();
             // 
             // totalAmountLabel
@@ -128,44 +128,45 @@
             this.nameLabel.Text = "Name";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
+            // paymentMethodsBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.paymentMethodsBox.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.paymentMethodsBox.FormattingEnabled = true;
+            this.paymentMethodsBox.Items.AddRange(new object[] {
             "PayPal",
             "Klarna"});
-            this.comboBox1.Location = new System.Drawing.Point(50, 339);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 45);
-            this.comboBox1.TabIndex = 12;
+            this.paymentMethodsBox.Location = new System.Drawing.Point(50, 339);
+            this.paymentMethodsBox.Name = "paymentMethodsBox";
+            this.paymentMethodsBox.Size = new System.Drawing.Size(194, 45);
+            this.paymentMethodsBox.TabIndex = 12;
+            this.paymentMethodsBox.Text = "PayPal";
             // 
-            // prettyButton1
+            // confiormButton
             // 
-            this.prettyButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
-            this.prettyButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
-            this.prettyButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.prettyButton1.BorderRadius = 5;
-            this.prettyButton1.BorderSize = 0;
-            this.prettyButton1.FlatAppearance.BorderSize = 0;
-            this.prettyButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prettyButton1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.prettyButton1.ForeColor = System.Drawing.Color.White;
-            this.prettyButton1.Location = new System.Drawing.Point(50, 507);
-            this.prettyButton1.Name = "prettyButton1";
-            this.prettyButton1.Size = new System.Drawing.Size(180, 40);
-            this.prettyButton1.TabIndex = 16;
-            this.prettyButton1.Text = "Confirm";
-            this.prettyButton1.TextColor = System.Drawing.Color.White;
-            this.prettyButton1.UseVisualStyleBackColor = false;
+            this.confiormButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.confiormButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(86)))), ((int)(((byte)(132)))));
+            this.confiormButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.confiormButton.BorderRadius = 5;
+            this.confiormButton.BorderSize = 0;
+            this.confiormButton.FlatAppearance.BorderSize = 0;
+            this.confiormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confiormButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confiormButton.ForeColor = System.Drawing.Color.White;
+            this.confiormButton.Location = new System.Drawing.Point(50, 507);
+            this.confiormButton.Name = "confiormButton";
+            this.confiormButton.Size = new System.Drawing.Size(180, 40);
+            this.confiormButton.TabIndex = 16;
+            this.confiormButton.Text = "Confirm";
+            this.confiormButton.TextColor = System.Drawing.Color.White;
+            this.confiormButton.UseVisualStyleBackColor = false;
             // 
             // UC_Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.prettyButton1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.confiormButton);
+            this.Controls.Add(this.paymentMethodsBox);
             this.Controls.Add(this.zipCodeLabel);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.streetLabel);
@@ -192,7 +193,7 @@
         private Label streetLabel;
         private Label emailLabel;
         private Label nameLabel;
-        private ComboBox comboBox1;
-        private PrettyButton prettyButton1;
+        private ComboBox paymentMethodsBox;
+        private PrettyButton confiormButton;
     }
 }

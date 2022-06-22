@@ -9,6 +9,13 @@ namespace PcProsShop
         RAM
     }
 
+    public enum Status
+    {
+        InProcess,
+        InShipping,
+        Delivered
+    }
+
     public partial class Form1 : Form
     {
         private bool mouseDown;

@@ -17,6 +17,31 @@ namespace PcProsShop.UserControls
         {
             InitializeComponent();
             parentForm = form;
+
+            DisplayData();
+        }
+
+        private void DisplayData()
+        { 
+            payAmountLabel.Text = CalculateTotalAmount(parentForm.cartItems).ToString();
+            nameLabel.Text = parentForm.account.Fname + " " + parentForm.account.Lname;
+            emailLabel.Text = parentForm.account.Mail;
+            cityLabel.Text = parentForm.account.City;
+            streetLabel.Text = parentForm.account.Street;
+            zipCodeLabel.Text = parentForm.account.Zip;
+        }
+
+        private double CalculateTotalAmount(List<CartItem> list)
+        {
+            double totalAmount = 0;
+
+            foreach (var item in list)
+            {
+                double tempAmount = item.Cartitem.Price * Convert.ToDouble(item.Amount);
+                totalAmount *= tempAmount;
+            }
+
+            return totalAmount;
         }
 
         private void label1_Click(object sender, EventArgs e)
