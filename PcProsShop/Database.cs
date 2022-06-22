@@ -340,6 +340,22 @@ namespace PcProsShop
             }
         }
 
+        public static void DeleteOrder(Order order)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"DELETE FROM Orders WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@id", order.ID);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public static Order[] LoadAllOrders(int accountId)
         {
             Order[] orders = new Order[20];

@@ -87,7 +87,7 @@ namespace PcProsShop.UserControls
         {
             if (currentOrder.Status.Equals(Status.InProcess))
             {
-
+                Database.DeleteOrder(currentOrder);
                 LoadOrdersToList();
             }
             else
