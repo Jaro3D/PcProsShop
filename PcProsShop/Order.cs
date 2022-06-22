@@ -37,7 +37,7 @@ namespace PcProsShop
             get { return id; }
             set { id = value; }
         }
-        public CartItem OrderItem
+        public CartItem Item
         {
             get { return item; }
             set { item = value; }
@@ -59,7 +59,7 @@ namespace PcProsShop
         public Order(int id, CartItem item, int customerID, Status status)
         {
             ID = id;
-            OrderItem = item;
+            Item = item;
             CustomerID = customerID;
             Status = status;
         }

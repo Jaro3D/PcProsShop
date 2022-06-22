@@ -106,6 +106,39 @@ namespace PcProsShop
             }
         }
 
+        public static Item LoadItem(int itemId)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"SELECT * FROM Item WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@id", itemId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        Item tempItem = new Item();
+
+                        while (reader.Read())
+                        {
+                            tempItem.ItemID = Convert.ToInt32(reader["id"]);
+                            tempItem.Name = reader["name"].ToString();
+                            tempItem.Brand = reader["brand"].ToString();
+                            tempItem.Info = reader["info"].ToString();
+                            tempItem.Category = reader["category"].ToString();
+                            tempItem.Amount = Convert.ToInt32(reader["amount"]);
+                            tempItem.Price = Convert.ToDouble(reader["price"]);
+                        }
+
+                        return tempItem;
+                    }
+
+                }
+            }
+        }
+
         public static void UpdateItem(Item item)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -280,8 +313,8 @@ namespace PcProsShop
                     command.CommandText = @"INSERT INTO Orders (accountId, itemId, amount, status) VALUES(@accountId, @itemId, @amount, @status)";
 
                     command.Parameters.AddWithValue("@accountId", order.CustomerID);
-                    command.Parameters.AddWithValue("@itemId", order.OrderItem.Cartitem.ItemID);
-                    command.Parameters.AddWithValue("@amount", order.OrderItem.Amount);
+                    command.Parameters.AddWithValue("@itemId", order.Item.Cartitem.ItemID);
+                    command.Parameters.AddWithValue("@amount", order.Item.Amount);
                     command.Parameters.AddWithValue("@status", order.Status);
 
                     command.ExecuteNonQuery();
@@ -289,5 +322,50 @@ namespace PcProsShop
                 }
             }
         }
+        /*
+        public static Order[] LoadAllOrders(int accountId)
+        {
+            Order[] orders = new Order[20];
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+
+                    command.CommandText = @"SELECT count(*) FROM Orders WHERE accountId = @accountId";
+                    command.Parameters.AddWithValue("@accountId", accountId);
+
+                    //Capture how many items were selected
+                    Int32 count = Convert.ToInt32(command.ExecuteScalar());
+
+                    orders = new Order[count];
+
+                    command.CommandText = @"SELECT count* FROM Orders WHERE accountId = @accountId ORDER BY status";
+                    command.Parameters.AddWithValue("@accountId", accountId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        int index = 0;
+                        while (reader.Read())
+                        {
+                            Item item = new Item();
+                            Order tempOrder = new Order(Convert.ToInt32(reader["id"]), );
+                            tempOrder.ID = Convert.ToInt32(reader["id"]);
+                            tempItem.Name = reader["name"].ToString();
+                            tempItem.Price = Convert.ToDouble(reader["price"]);
+
+                            orders[index] = tempItem;
+
+                            index++;
+                        }
+
+                        return orders;
+                    }
+                }
+            }
+        }
+        */
+
     }
 }

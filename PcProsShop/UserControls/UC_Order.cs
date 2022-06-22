@@ -16,5 +16,10 @@ namespace PcProsShop.UserControls
         {
             InitializeComponent();
         }
+
+        private void UC_Order_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

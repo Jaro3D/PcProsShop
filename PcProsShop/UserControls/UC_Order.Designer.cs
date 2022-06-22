@@ -28,34 +28,152 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.editPanel = new System.Windows.Forms.Panel();
+            this.cancelButton = new PcProsShop.PrettyButton();
+            this.orderName = new System.Windows.Forms.Label();
+            this.orderPrice = new System.Windows.Forms.Label();
+            this.cartItemList = new System.Windows.Forms.ListView();
+            this.nameColumn = new System.Windows.Forms.ColumnHeader();
+            this.priceColumt = new System.Windows.Forms.ColumnHeader();
+            this.amountColumn = new System.Windows.Forms.ColumnHeader();
+            this.preStatusLabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.editPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // editPanel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 40.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(201, 250);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 95);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Order Screen";
+            this.editPanel.Controls.Add(this.statusLabel);
+            this.editPanel.Controls.Add(this.preStatusLabel);
+            this.editPanel.Controls.Add(this.cancelButton);
+            this.editPanel.Controls.Add(this.orderName);
+            this.editPanel.Controls.Add(this.orderPrice);
+            this.editPanel.Location = new System.Drawing.Point(446, 47);
+            this.editPanel.Name = "editPanel";
+            this.editPanel.Size = new System.Drawing.Size(283, 521);
+            this.editPanel.TabIndex = 17;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.Red;
+            this.cancelButton.BackgroundColor = System.Drawing.Color.Red;
+            this.cancelButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.cancelButton.BorderRadius = 5;
+            this.cancelButton.BorderSize = 0;
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(18, 191);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(100, 40);
+            this.cancelButton.TabIndex = 14;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.TextColor = System.Drawing.Color.White;
+            this.cancelButton.UseVisualStyleBackColor = false;
+            // 
+            // orderName
+            // 
+            this.orderName.AutoSize = true;
+            this.orderName.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.orderName.Location = new System.Drawing.Point(18, 5);
+            this.orderName.Name = "orderName";
+            this.orderName.Size = new System.Drawing.Size(102, 48);
+            this.orderName.TabIndex = 1;
+            this.orderName.Text = "Name";
+            // 
+            // orderPrice
+            // 
+            this.orderPrice.AutoSize = true;
+            this.orderPrice.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.orderPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(103)))), ((int)(((byte)(218)))));
+            this.orderPrice.Location = new System.Drawing.Point(18, 102);
+            this.orderPrice.Name = "orderPrice";
+            this.orderPrice.Size = new System.Drawing.Size(70, 37);
+            this.orderPrice.TabIndex = 2;
+            this.orderPrice.Text = "100€";
+            // 
+            // cartItemList
+            // 
+            this.cartItemList.AutoArrange = false;
+            this.cartItemList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cartItemList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nameColumn,
+            this.priceColumt,
+            this.amountColumn});
+            this.cartItemList.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cartItemList.ForeColor = System.Drawing.Color.Black;
+            this.cartItemList.FullRowSelect = true;
+            this.cartItemList.Location = new System.Drawing.Point(15, 15);
+            this.cartItemList.MultiSelect = false;
+            this.cartItemList.Name = "cartItemList";
+            this.cartItemList.Size = new System.Drawing.Size(395, 565);
+            this.cartItemList.TabIndex = 16;
+            this.cartItemList.UseCompatibleStateImageBehavior = false;
+            this.cartItemList.View = System.Windows.Forms.View.Details;
+            // 
+            // nameColumn
+            // 
+            this.nameColumn.Text = "Name";
+            this.nameColumn.Width = 225;
+            // 
+            // priceColumt
+            // 
+            this.priceColumt.Text = "Price";
+            this.priceColumt.Width = 80;
+            // 
+            // amountColumn
+            // 
+            this.amountColumn.Text = "Amount";
+            this.amountColumn.Width = 90;
+            // 
+            // preStatusLabel
+            // 
+            this.preStatusLabel.AutoSize = true;
+            this.preStatusLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.preStatusLabel.Location = new System.Drawing.Point(18, 53);
+            this.preStatusLabel.Name = "preStatusLabel";
+            this.preStatusLabel.Size = new System.Drawing.Size(111, 48);
+            this.preStatusLabel.TabIndex = 15;
+            this.preStatusLabel.Text = "Status:";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.statusLabel.Location = new System.Drawing.Point(126, 53);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(105, 48);
+            this.statusLabel.TabIndex = 16;
+            this.statusLabel.Text = "Status";
             // 
             // UC_Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.editPanel);
+            this.Controls.Add(this.cartItemList);
             this.Name = "UC_Order";
             this.Size = new System.Drawing.Size(795, 595);
+            this.Load += new System.EventHandler(this.UC_Order_Load);
+            this.editPanel.ResumeLayout(false);
+            this.editPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Label label1;
+        private Panel editPanel;
+        private Label statusLabel;
+        private Label preStatusLabel;
+        private PrettyButton cancelButton;
+        private Label orderName;
+        private Label orderPrice;
+        private ListView cartItemList;
+        private ColumnHeader nameColumn;
+        private ColumnHeader priceColumt;
+        private ColumnHeader amountColumn;
     }
 }
