@@ -21,6 +21,7 @@ namespace PcProsShop
         public bool isAdmin = false;
         public Label accChar;
         public Panel cartNotificationIcon;
+        public Panel accountIcon;
         public List<CartItem> cartItems = new List<CartItem>();
 
         public Form1()
@@ -37,6 +38,8 @@ namespace PcProsShop
             pageCountPanel.BackColor = Color.FromArgb(0, Color.Black);
             pageCount.BackColor = Color.FromArgb(0, Color.Black);
             cartNotfIcon.BackColor = Color.FromArgb(0, Color.Black);
+
+            accountIcon = accountIconButton;
 
             cartNotfIcon.Visible = false;
             nameFirstChar.Visible = false;

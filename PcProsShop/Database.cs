@@ -322,7 +322,40 @@ namespace PcProsShop
                 }
             }
         }
-        /*
+
+        public static void UpdateOrderStatus(Order order)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"UPDATE Orders SET status = @status WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@status", order.Status);
+                    command.Parameters.AddWithValue("@id", order.ID);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void DeleteOrder(Order order)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = connection.CreateCommand())
+                {
+                    connection.Open();
+                    command.CommandText = @"DELETE FROM Orders WHERE id = @id";
+
+                    command.Parameters.AddWithValue("@id", order.ID);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public static Order[] LoadAllOrders(int accountId)
         {
             Order[] orders = new Order[20];
@@ -341,21 +374,38 @@ namespace PcProsShop
 
                     orders = new Order[count];
 
-                    command.CommandText = @"SELECT count* FROM Orders WHERE accountId = @accountId ORDER BY status";
-                    command.Parameters.AddWithValue("@accountId", accountId);
+                    command.CommandText = @"SELECT * FROM Orders WHERE accountId = @accountId ORDER BY status";
 
                     using (var reader = command.ExecuteReader())
                     {
                         int index = 0;
                         while (reader.Read())
                         {
-                            Item item = new Item();
-                            Order tempOrder = new Order(Convert.ToInt32(reader["id"]), );
-                            tempOrder.ID = Convert.ToInt32(reader["id"]);
-                            tempItem.Name = reader["name"].ToString();
-                            tempItem.Price = Convert.ToDouble(reader["price"]);
+                            Order tempOrder = new Order();
+                            CartItem tempCartItem = new CartItem(LoadItem(Convert.ToInt32(reader["itemId"])), Convert.ToInt32(reader["amount"]));
 
-                            orders[index] = tempItem;
+                            tempOrder.ID = Convert.ToInt32(reader["id"]);
+                            tempOrder.CustomerID = Convert.ToInt32(reader["accountId"]);
+                            tempOrder.Item = tempCartItem;
+                            
+                            int tempStatus = Convert.ToInt32(reader["status"]);
+                            switch (tempStatus)
+                            {
+                                case 0:
+                                    tempOrder.Status = Status.InProcess;
+                                    break;
+                                case 1:
+                                    tempOrder.Status = Status.InShipping;
+                                    break;
+                                case 2:
+                                    tempOrder.Status = Status.Delivered;
+                                    break;
+
+                                default:
+                                    break;
+                            }
+
+                            orders[index] = tempOrder;
 
                             index++;
                         }
@@ -365,7 +415,5 @@ namespace PcProsShop
                 }
             }
         }
-        */
-
     }
 }

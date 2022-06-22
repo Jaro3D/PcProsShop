@@ -138,12 +138,13 @@ namespace PcProsShop.UserControls
             parentForm.accChar.Visible = false;
             parentForm.loggedIn = false;
             parentForm.tabIndex = 0;
+            parentForm.accountIcon.BackgroundImage = Properties.Resources.AccountIcon;
             parentForm.SwitchTab();
         }
 
         private void orderButton_Click(object sender, EventArgs e)
         {
-            UC_Order ucOrder = new UC_Order();
+            UC_Order ucOrder = new UC_Order(parentForm);
             parentForm.AddUserControl(ucOrder);
         }
     }
