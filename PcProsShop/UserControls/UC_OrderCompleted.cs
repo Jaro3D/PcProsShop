@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PcProsShop.UserControls
 {
-    public partial class White : UserControl
+    public partial class UC_OrderCompleted : UserControl
     {
-        public White()
+        public UC_OrderCompleted()
         {
             InitializeComponent();
+        }
+
+        private void UC_OrderCompleted_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
