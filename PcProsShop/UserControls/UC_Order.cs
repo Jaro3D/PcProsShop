@@ -87,6 +87,8 @@ namespace PcProsShop.UserControls
         {
             if (currentOrder.Status.Equals(Status.InProcess))
             {
+                Item tempItem = currentOrder.Item.Cartitem;
+                tempItem.Amount += currentOrder.Item.Amount;
                 Database.DeleteOrder(currentOrder);
                 LoadOrdersToList();
             }

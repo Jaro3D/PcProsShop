@@ -62,6 +62,10 @@ namespace PcProsShop.UserControls
                 {
                     Order tempOrder = new Order(1, item, parentForm.account.Id, Status.InProcess);
                     Database.CreateOrder(tempOrder);
+                    Item tempItem = new Item();
+                    tempItem = tempOrder.Item.Cartitem;
+                    tempItem.Amount -= tempOrder.Item.Amount;
+                    Database.UpdateItem(tempItem);
 
                     UC_OrderCompleted ucOrderCompleted = new UC_OrderCompleted();
                     parentForm.AddUserControl(ucOrderCompleted);
