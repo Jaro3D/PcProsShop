@@ -72,7 +72,27 @@ namespace PcProsShop.UserControls
         private void addButton_Click(object sender, EventArgs e)
         {
             CartItem cItem = new CartItem(item, itemAmount);
-            parentForm.cartItems.Add(cItem);
+
+            if (parentForm.cartItems.Any(x=>x.Cartitem.ItemID == item.ItemID))
+            {
+                int listIndex = parentForm.cartItems.FindIndex(x => x.Cartitem.ItemID == item.ItemID);
+                int totalAmount = parentForm.cartItems[listIndex].Amount + cItem.Amount;
+                int availableAmount = parentForm.cartItems[listIndex].Cartitem.Amount;
+
+                if (totalAmount <= availableAmount)
+                {
+                    parentForm.cartItems[listIndex].Amount = totalAmount;
+                }
+                else
+                {
+                    MessageBox.Show("Not enough items in stock");
+                }
+            }
+            else
+            {
+                parentForm.cartItems.Add(cItem);
+            }
+
             parentForm.cartNotificationIcon.Visible = true;
         }
     }
