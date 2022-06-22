@@ -23,7 +23,7 @@ namespace PcProsShop.UserControls
 
         private void DisplayData()
         { 
-            payAmountLabel.Text = CalculateTotalAmount(parentForm.cartItems).ToString();
+            payAmountLabel.Text = CalculateTotalAmount(parentForm.cartItems).ToString() + "€";
             nameLabel.Text = parentForm.account.Fname + " " + parentForm.account.Lname;
             emailLabel.Text = parentForm.account.Mail;
             cityLabel.Text = parentForm.account.City;
@@ -38,9 +38,7 @@ namespace PcProsShop.UserControls
             foreach (var item in list)
             {
                 double tempAmount = item.Cartitem.Price * Convert.ToDouble(item.Amount);
-                MessageBox.Show(tempAmount.ToString());
-                totalAmount *= tempAmount;
-                MessageBox.Show(totalAmount.ToString());
+                totalAmount += tempAmount;
             }
 
             return totalAmount;

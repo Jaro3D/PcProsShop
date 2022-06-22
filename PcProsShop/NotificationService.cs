@@ -119,12 +119,13 @@ namespace PcProsShop
                     + "</td> <td align=center>" + newOrder.OrderItem[i].Amount
                     + "</td> <td align=right>" + formatPrice(singlePrice) + " €"
                     + "</td> <td align=right>" + formatPrice(totalPrice) + " €</td> </tr>";
+
+                text += "</table><p><b>Total price: " + newOrder.OrderItem[i].Cartitem.Price + " €<br></b></p>"
+                    + "<p><br>Your ordered items will arrive shortly.<br><br></p>"
+                    + "<p>Thank you for buying at PC Pros</p>"
+                    + "<p>We'll be happy to hear from you again</p>"
+                    + "<p>Your PC Pros Team<br><br><br></p> </body></html>";
             }
-            text += "</table><p><b>Total price: " + newOrder.calcTotalPrice() + " €<br></b></p>"
-                + "<p><br>Your ordered items will arrive shortly.<br><br></p>"
-                + "<p>Thank you for buying at PC Pros</p>"
-                + "<p>We'll be happy to hear from you again</p>"
-                + "<p>Your PC Pros Team<br><br><br></p> </body></html>";
 
             //Console.WriteLine(text);
             sendMail(userAccount.Mail, subject, text);

@@ -38,6 +38,7 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.paymentMethodsBox = new System.Windows.Forms.ComboBox();
             this.confiormButton = new PcProsShop.PrettyButton();
+            this.payMethodLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // totalAmountLabel
@@ -130,16 +131,16 @@
             // 
             // paymentMethodsBox
             // 
+            this.paymentMethodsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.paymentMethodsBox.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.paymentMethodsBox.FormattingEnabled = true;
             this.paymentMethodsBox.Items.AddRange(new object[] {
             "PayPal",
             "Klarna"});
-            this.paymentMethodsBox.Location = new System.Drawing.Point(50, 339);
+            this.paymentMethodsBox.Location = new System.Drawing.Point(52, 397);
             this.paymentMethodsBox.Name = "paymentMethodsBox";
             this.paymentMethodsBox.Size = new System.Drawing.Size(194, 45);
             this.paymentMethodsBox.TabIndex = 12;
-            this.paymentMethodsBox.Text = "PayPal";
             // 
             // confiormButton
             // 
@@ -152,7 +153,7 @@
             this.confiormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confiormButton.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.confiormButton.ForeColor = System.Drawing.Color.White;
-            this.confiormButton.Location = new System.Drawing.Point(50, 507);
+            this.confiormButton.Location = new System.Drawing.Point(52, 506);
             this.confiormButton.Name = "confiormButton";
             this.confiormButton.Size = new System.Drawing.Size(180, 40);
             this.confiormButton.TabIndex = 16;
@@ -160,11 +161,22 @@
             this.confiormButton.TextColor = System.Drawing.Color.White;
             this.confiormButton.UseVisualStyleBackColor = false;
             // 
+            // payMethodLabel
+            // 
+            this.payMethodLabel.AutoSize = true;
+            this.payMethodLabel.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.payMethodLabel.Location = new System.Drawing.Point(45, 346);
+            this.payMethodLabel.Name = "payMethodLabel";
+            this.payMethodLabel.Size = new System.Drawing.Size(255, 48);
+            this.payMethodLabel.TabIndex = 17;
+            this.payMethodLabel.Text = "Payment method";
+            // 
             // UC_Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.payMethodLabel);
             this.Controls.Add(this.confiormButton);
             this.Controls.Add(this.paymentMethodsBox);
             this.Controls.Add(this.zipCodeLabel);
@@ -195,5 +207,6 @@
         private Label nameLabel;
         private ComboBox paymentMethodsBox;
         private PrettyButton confiormButton;
+        private Label payMethodLabel;
     }
 }
