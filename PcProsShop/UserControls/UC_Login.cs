@@ -79,6 +79,10 @@ namespace PcProsShop.UserControls
             {
                 MessageBox.Show("All fields must be filled out");
             }
+
+
+
+
         }
 
         private void UC_Login_Load(object sender, EventArgs e)
