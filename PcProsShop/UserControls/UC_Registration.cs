@@ -76,6 +76,8 @@ namespace PcProsShop.UserControls
 
                                 Database.CreateAccount(acc);
 
+                                NotificationService.sendAccoundCreated(acc);
+
                                 UC_Login ucLogin = new UC_Login(parentForm);
                                 parentForm.AddUserControl(ucLogin);
                             }

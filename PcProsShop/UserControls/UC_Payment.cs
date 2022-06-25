@@ -66,9 +66,11 @@ namespace PcProsShop.UserControls
                     tempItem = tempOrder.Item.Cartitem;
                     tempItem.Amount -= tempOrder.Item.Amount;
                     Database.UpdateItem(tempItem);
+                    NotificationService.sendOrderInvoice(tempOrder, parentForm.account);
 
                     UC_OrderCompleted ucOrderCompleted = new UC_OrderCompleted();
                     parentForm.AddUserControl(ucOrderCompleted);
+                    
                 }
 
                 parentForm.cartItems.Clear();

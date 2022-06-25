@@ -10,18 +10,12 @@ namespace PcProsShop
     internal class Database
     {
 
-        /*
-         * Use Encryption.getConnectionString("StringDB"); to fetch connectionString from app.config
-         * Maybe need to import "System.Configuration.ConfigurationManager" via NuGet
-         */
-        static string connectionString = "Server=tcp:pc-pros-shop.database.windows.net,1433;Initial Catalog=pc-pros-shop-database;Persist Security Info=False;User ID=PCPros;Password=HJGVdzz2t23sd.edw;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        //Just a test function which has to be deleted later
         public static Item[] LoadInventory(Category category)
         {
             Item[] inventory = new Item[20];
 
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -65,8 +59,8 @@ namespace PcProsShop
         public static Item[] LoadAllInventory()
         {
             Item[] inventory = new Item[20];
-
-            using (var connection = new SqlConnection(connectionString))
+     
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -108,7 +102,8 @@ namespace PcProsShop
 
         public static Item LoadItem(int itemId)
         {
-            using (var connection = new SqlConnection(connectionString))
+           
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -141,7 +136,8 @@ namespace PcProsShop
 
         public static void UpdateItem(Item item)
         {
-            using (var connection = new SqlConnection(connectionString))
+            
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -163,7 +159,7 @@ namespace PcProsShop
 
         public static void CreateAccount(Account account)
         {
-            //Encryption
+            
             byte[] iv = Encryption.createIV();
             byte[] key = Encryption.createKey(account.Password);
             string identifier = Encryption.createHash(account.Mail);
@@ -171,8 +167,8 @@ namespace PcProsShop
             account = Encryption.encryptAccount(account, key, iv);
 
             string ivString = Convert.ToBase64String(iv);
-
-            using (var connection = new SqlConnection(connectionString))
+            //Add ConnectionString Function g
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -207,8 +203,8 @@ namespace PcProsShop
             account = Encryption.encryptAccount(account, key, iv);
 
             string ivString = Convert.ToBase64String(iv);
-
-            using (var connection = new SqlConnection(connectionString))
+            
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -240,8 +236,8 @@ namespace PcProsShop
             string identifier = Encryption.createHash(email);
             string iv = "";
             byte[] key = Encryption.createKey(password);
-
-            using (var connection = new SqlConnection(connectionString))
+            
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -279,8 +275,8 @@ namespace PcProsShop
         public static bool CheckIfEmailExists(string email)
         {
             string identifier = Encryption.createHash(email);
-
-            using (var connection = new SqlConnection(connectionString))
+           
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -305,7 +301,9 @@ namespace PcProsShop
         }
 
         public static void CreateOrder(Order order)
-        {using (var connection = new SqlConnection(connectionString))
+        {
+    
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -324,8 +322,10 @@ namespace PcProsShop
         }
 
         public static void UpdateOrderStatus(Order order)
+
         {
-            using (var connection = new SqlConnection(connectionString))
+          
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -342,7 +342,8 @@ namespace PcProsShop
 
         public static void DeleteOrder(Order order)
         {
-            using (var connection = new SqlConnection(connectionString))
+            
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
@@ -360,7 +361,8 @@ namespace PcProsShop
         {
             Order[] orders = new Order[20];
 
-            using (var connection = new SqlConnection(connectionString))
+      
+            using (var connection = new SqlConnection(Encryption.getConnectionString("StringDB")))
             {
                 using (var command = connection.CreateCommand())
                 {
