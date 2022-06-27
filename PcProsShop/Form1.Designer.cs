@@ -338,9 +338,10 @@
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "PC Pros Shop";
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.accountIconButton.ResumeLayout(false);
