@@ -118,7 +118,7 @@ namespace PcProsShop
                 + "</td> <td align=right>" + formatPrice(singlePrice) + " €"
                 + "</td> <td align=right>" + formatPrice(totalPrice) + " €</td> </tr>";
 
-            text += "</table><p><b>Total price: " + newOrder.Item.Cartitem.Price + " €<br></b></p>"
+            text += "</table><p><b>Total price: " + formatPrice(totalPrice) + " €<br></b></p>"
                 + "<p><br>Your ordered items will arrive shortly.<br><br></p>"
                 + "<p>Thank you for buying at PC Pros</p>"
                 + "<p>We'll be happy to hear from you again</p>"
