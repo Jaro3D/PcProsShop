@@ -69,6 +69,9 @@ namespace PcProsShop
                     UC_Home ucHome = new UC_Home(tabIndex, this, currentPage);
                     AddUserControl(ucHome);
 
+                    currentPage = 1;
+                    UpdatePageCount();
+
                     break;
 
                 case 1:
@@ -81,6 +84,9 @@ namespace PcProsShop
                     ucHome = new UC_Home(tabIndex, this, currentPage);
                     AddUserControl(ucHome);
 
+                    currentPage = 1;
+                    UpdatePageCount();
+
                     break;
 
                 case 2:
@@ -92,6 +98,9 @@ namespace PcProsShop
 
                     ucHome = new UC_Home(tabIndex, this, currentPage);
                     AddUserControl(ucHome);
+
+                    currentPage = 1;
+                    UpdatePageCount();
 
                     break;
 
@@ -259,16 +268,12 @@ namespace PcProsShop
         private void cpuButton_Click(object sender, EventArgs e)
         {
             tabIndex = 1;
-            currentPage = 1;
-            UpdatePageCount();
             SwitchTab();
         }
 
         private void ramButton_Click(object sender, EventArgs e)
         {
             tabIndex = 2;
-            currentPage = 1;
-            UpdatePageCount();
             SwitchTab();
         }
 
