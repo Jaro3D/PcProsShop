@@ -63,6 +63,7 @@ namespace PcProsShop.UserControls
         private void deleteButton_Click(object sender, EventArgs e)
         {
             parentForm.cartItems.RemoveAt(currentItemIndex);
+            currentItemIndex = 0;
             LoadItemsToList();
 
             if (parentForm.cartItems.Count <= 0)
