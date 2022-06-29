@@ -140,6 +140,7 @@ namespace PcProsShop.UserControls
             parentForm.tabIndex = 0;
             parentForm.accountIcon.BackgroundImage = Properties.Resources.AccountIcon;
             parentForm.SwitchTab();
+            parentForm.DeactivateAdminMode();
         }
 
         private void orderButton_Click(object sender, EventArgs e)
